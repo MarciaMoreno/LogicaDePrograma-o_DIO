@@ -3,7 +3,7 @@
 Professor Orientador: Felipe Silva.
 
 
-| Perfil GIT/GitHob | Dados Profissionais. |
+| Perfil GIT/GitHobby | Dados Profissionais. |
 |---------------------------------------------|----------------------------------------| 
 |<a href="https://github.com/felipeAguiarCode/felipeAguiarCode"> <img src="./assets/foto.png" alt="Foto do pefil Felipe Aguiar"></a> | <a href="https://github.com/felipeAguiarCode/felipeAguiarCode"><Img src="./assets/info_perfil.png" alt="Dados porfissionais do professor"></a> |
 
