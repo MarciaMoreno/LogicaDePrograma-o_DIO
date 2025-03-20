@@ -73,52 +73,47 @@
      .recompensa img{ width: 100px; display: block; margin: auto; position: absolute; top: -1px; left: -2px;}
      .recompensa button{ 
           width: 100px; height: 100px; border-radius: 50%; position: relative; 
-          animation: moeda 3s ease-in-out alternate infinite;
+          animation: moeda 3s ease-in-out alternate infinite; 
+          background: radial-gradient(circle, rgba(236,226,71,0.9551470246301645) 0%, rgba(147,129,23,1) 47%, rgba(242,224,115,0.8122898817730217) 100%);
      }
+     #resultado{ color: #fde445; font-size: 1.5rem; }
      @keyframes moeda {
           to{
-               transform: scale(0.8);
+               transform: scale(.9);
                box-shadow: 2px 24px 56px #f5f599;
+               background: radial-gradient(circle, rgba(236,226,71,0.9551470246301645) 20%, rgba(147,129,23,1) 60%, rgba(242,224,115,0.8122898817730217) 100%);
           } 
      }
-     /* Estiliza o fundo da modal */
-     .modal {
-          display: none; /* Inicialmente oculta */
-          position: fixed;
-          z-index: 1;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
+     
+     .zeldiano_hero{ 
+          width: 100vh; font-family: "Press Start 2P", system-ui; margin: 10px;
+          color: #a98ac1; text-shadow: 2px 2px 0 #effbf9; font-size: 1.6rem;
+          filter: drop-shadow( 10px 30px 40px #a98ac1);
+          border-bottom: 12px dashed #a98ac1; margin-bottom: 40px;
      }
-
-     /* Caixa da modal */
-     .modal-content {
-          background-color: white;
-          margin: 15% auto;
-          padding: 20px;
-          border-radius: 8px;
-          width: 300px;
-          text-align: center;
-     }
-
-     /* Botão para fechar */
-     .close {
-          color: red;
-          float: right;
-          font-size: 22px;
-          cursor: pointer;
-     }
-
      .zeldiano_hero:nth-child(1):hover{
-          animation: zeldiano_hero 3s ease-in-out alternate infinite;          
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;                 
      }
      .zeldiano_hero:nth-child(2):hover{
-          animation: zeldiano_hero 3s ease-in-out alternate infinite;
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;          
      }
      .zeldiano_hero:nth-child(3):hover{
-          animation: zeldiano_hero 3s ease-in-out alternate infinite;
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;           
+     }
+     .zeldiano_hero:nth-child(4):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;           
+     }
+     .zeldiano_hero:nth-child(5):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;           
+     }
+     .zeldiano_hero:nth-child(6):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;           
+     }
+     .zeldiano_hero:nth-child(7):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;           
+     }
+     .zeldiano_hero:nth-child(8):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;           
      }
 
      @keyframes zeldiano_hero {
@@ -126,9 +121,10 @@
                transform: scale(0.8);
                filter: drop-shadow( 10px 30px 40px #fdfbc9);
                background-image: url("../Imagens/estrela-bkg.png");
-               font-size: 3rem; color: #fffca3;
-               font-family: "Anton", sans-serif; text-align: center; 
+               font-size: 2rem; color: #fffca3;
+               font-family: "Press Start 2P", system-ui; text-align: center; 
                text-shadow: 2px 4px 18px #2e2635, 4px 8px 22px #2e2635, 8px 16px 42px #2e2635;
+               border-bottom: 12px dashed transparent;
           }
      }
 
