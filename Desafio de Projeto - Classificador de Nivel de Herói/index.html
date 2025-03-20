@@ -5,13 +5,27 @@
                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                <title>Home  Zeldianos</title>
                <link rel="stylesheet" href="css/estilo.css">
+               <script src="index.js"></script>
           </head>
           <body>
                <header>
-                    <h1 class="game_name">FIGHT ZONE <br><b class="subtitle">HQs</b></h1>                    
+                    <h1 class="anton-regular h1">FIGHT ZONE HQs</h1>                    
+                    <h2 class="press-start-2p-regular tito">Escolha seu avatar e descubra seu nível de luta Zeldiano</h2>
                </header>  
                <main>
-                    <h2>Escolha seu avatar e descubra seu nível de luta Zeldiano</h2>
+                    <div class="recompensa">
+                         <p>Clique aqui e obtenha sua recompensa diária</p>
+                         <button onclick="abrirModal()">
+                              <img src="./Imagens/moeda.png" alt="Moeda e recompensa diária">
+                         </button>
+                         <!-- Estrutura da modal -->
+                         <div id="meuModal" class="modal">
+                              <div class="modal-content">
+                                   <span class="close" onclick="fecharModal()">&times;</span>
+                              </div>
+                         </div>
+                         
+                    </div>
                     <div class="container">
                          <div class="zeldiano_hero">
                               <img src="./Imagens/heroi01.png" alt="Heroi Zeldiano Wolvinho">
@@ -29,7 +43,6 @@
                </main>
                <footer>
                     <h2>MarciaMoreno - 2025 &copy; - Nazaré do Piuaí</h2>
-               </footer>
-               <script src="index.js"></script>
+               </footer>               
           </body>
      </html>

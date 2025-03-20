@@ -1,45 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=PT+Sans+Narrow:wght@400;700&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
 
-     .bytesized-regular {
-          font-family: "Bytesized", sans-serif;
-          font-weight: 400;
-          font-style: normal;
-     }
-     .anton-regular {
-          font-family: "Anton", sans-serif;
-          font-weight: 400;
-          font-style: normal;
-     }
-     .pt-sans-narrow-regular {
-          font-family: "PT Sans Narrow", sans-serif;
-          font-weight: 400;
-          font-style: normal;
-     }
+          .monoton-regular {
+               font-family: "Monoton", sans-serif;
+               font-weight: 400;
+               font-style: normal;
+          }
+          .press-start-2p-regular {
+               font-family: "Press Start 2P", system-ui;
+               font-weight: 400;
+               font-style: normal;
+          }
 
-     .pt-sans-narrow-bold {
-          font-family: "PT Sans Narrow", sans-serif;
-          font-weight: 700;
-          font-style: normal;
-     }
-   
-/******************************************************************************************************************
-***************DESAFIO DE PROJETO - Lógica de Programação - Nazaré do Piauí 18/03 ********************************/
+          .texto {
+               font-family: "42dot Sans", sans-serif;
+               font-optical-sizing: auto;
+               font-weight: 400;
+               font-style: normal;
+          }    
 
-/*** Edição do body e estilos do corpo...... */
+     /******************************************************************************************************************
+     ***************DESAFIO DE PROJETO - Lógica de Programação - Nazaré do Piauí 19/03 ********************************/
+
      body{
-          padding: 0; margin: 0 auto; 
-          font-family: "PT Sans Narrow", sans-serif;
-          font-weight: 400; font-style: normal;
+          text-align: center; margin: 0 auto; padding: 0;
+          flex-wrap: wrap; min-width: 360px;
      }
-     main, header, footer{ text-align: center;}
-     .game_name{
-          font-size: 8rem; background-clip: text; width: 100%;
+     header {
+          --s: 82px; /* control the size*/
+          --c1: #a98ac1;
+          --c2: #fbf4a2;
+          --c3: #36d3c1;
+
+          --_g: var(--c3) 0 120deg,#0000 0;
+          background:
+          conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
+          conic-gradient(from 120deg at 50% calc(200%/3),var(--_g)),
+          conic-gradient(from  60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
+          conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--_g)),
+          linear-gradient(90deg,var(--c1)   calc(100%/6),var(--c2) 0 50%,
+                              var(--c1) 0 calc(500%/6),var(--c2) 0);
+          background-size: calc(1.732*var(--s)) var(--s);
      }
+
+     .h1{
+          font-size: 6rem;  font-family: "Monoton", sans-serif; font-weight: 200;
+          word-spacing: 20px; background-color: var(--c1); color: var(--c2);
+     }
+
+     .tito{ 
+     padding: 40px; color: #f5f599; 
+     text-shadow: 2px 4px 18px #2e2635, 4px 8px 22px #2e2635, 8px 16px 42px #2e2635;
+     }
+
+     main{ display: block; margin: 0; background-color: #565a59; color: aliceblue;} 
      .container{
-          display: flex; justify-content: center; text-align: center; align-items: center;
+          display: flex; justify-content: center; align-items: center;
+          flex-wrap: wrap;
      }
      .zeldiano_hero img{
-          width: 400px; height: 800px; object-fit: contain; object-position: center;
+          width: 360px; height: 500px;
+     }
+
+     .recompensa{
+          width: 360px; height: 300px;
+          flex-wrap: wrap; margin: auto; line-height: 32px; position: relative;
+          display: block; padding: 25px;  font-family: "Press Start 2P", system-ui;
+
+
+     }
+     .recompensa img{ width: 100px; display: block; margin: auto; position: absolute; top: -1px; left: -2px;}
+     .recompensa button{ 
+          width: 100px; height: 100px; border-radius: 50%; position: relative; 
+          animation: moeda 3s ease-in-out alternate infinite;
+     }
+     @keyframes moeda {
+          to{
+               transform: scale(0.8);
+               box-shadow: 2px 24px 56px #f5f599;
+          } 
+     }
+     /* Estiliza o fundo da modal */
+     .modal {
+          display: none; /* Inicialmente oculta */
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+     }
+
+     /* Caixa da modal */
+     .modal-content {
+          background-color: white;
+          margin: 15% auto;
+          padding: 20px;
+          border-radius: 8px;
+          width: 300px;
+          text-align: center;
+     }
+
+     /* Botão para fechar */
+     .close {
+          color: red;
+          float: right;
+          font-size: 22px;
+          cursor: pointer;
+     }
+
+     .zeldiano_hero:nth-child(1):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;          
+     }
+     .zeldiano_hero:nth-child(2):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;
+     }
+     .zeldiano_hero:nth-child(3):hover{
+          animation: zeldiano_hero 3s ease-in-out alternate infinite;
+     }
+
+     @keyframes zeldiano_hero {
+          to{
+               transform: scale(0.8);
+               filter: drop-shadow( 10px 30px 40px #fdfbc9);
+               background-image: url("../Imagens/estrela-bkg.png");
+               font-size: 3rem; color: #fffca3;
+               font-family: "Anton", sans-serif; text-align: center; 
+               text-shadow: 2px 4px 18px #2e2635, 4px 8px 22px #2e2635, 8px 16px 42px #2e2635;
+          }
+     }
+
+     footer {
+          --s: 82px; /* control the size*/
+          --c1: #a98ac1;
+          --c2: #fbf4a2;
+          --c3: #36d3c1;
+
+          --_g: var(--c3) 0 120deg,#0000 0;
+          background:
+          conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
+          conic-gradient(from 120deg at 50% calc(200%/3),var(--_g)),
+          conic-gradient(from  60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
+          conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--_g)),
+          linear-gradient(90deg,var(--c1)   calc(100%/6),var(--c2) 0 50%,
+                              var(--c1) 0 calc(500%/6),var(--c2) 0);
+          background-size: calc(1.732*var(--s)) var(--s);
+          padding: 50px;
      }
