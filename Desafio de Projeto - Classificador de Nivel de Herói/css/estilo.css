@@ -78,12 +78,23 @@
      #resultado{ color: #fde445; font-size: 1.5rem; }
      @keyframes moeda {
           to{
-               transform: scale(.9);
                box-shadow: 2px 24px 56px #f5f599;
           } 
      }
 
      /** Estilizando a grade de heróis   */
+
+     .hero{ 
+          border-bottom: 12px dashed #a98ac1; margin-bottom: 40px;
+     }
+     .hero button{ 
+          padding: 20px 20px 20px 20px; margin: 25px; border-radius: 50px;
+          font-family: "Press Start 2P", system-ui; font-size: 1.2rem;
+          background: linear-gradient(45deg, #a98ac1 20%, #36d3c1 50%, #f5f599 70%);
+     }
+     .hero button:hover{ color: #effbf9; border-style: inset; text-shadow: 2px 2px 0 #2e2635;}
+
+
      .zeldiano_hero img{
           width: 360px; height: 500px;
      }     
@@ -91,7 +102,7 @@
           width: 100vh; font-family: "Press Start 2P", system-ui; margin: 10px;
           color: #a98ac1; text-shadow: 2px 2px 0 #effbf9; font-size: 1.6rem;
           filter: drop-shadow( 10px 30px 40px #a98ac1);
-          border-bottom: 12px dashed #a98ac1; margin-bottom: 40px;
+          
      }
      .zeldiano_hero:nth-child(1):hover{
           animation: zeldiano_hero 3s ease-in-out alternate infinite;                 
@@ -120,13 +131,13 @@
 
      @keyframes zeldiano_hero {
           to{
-               transform: scale(0.8);
+               transform: scale(1);
                filter: drop-shadow( 10px 30px 40px #fdfbc9);
                background-image: url("../Imagens/estrela-bkg.png");
                font-size: 2rem; color: #fffca3;
                font-family: "Press Start 2P", system-ui; text-align: center; 
                text-shadow: 2px 4px 18px #2e2635, 4px 8px 22px #2e2635, 8px 16px 42px #2e2635;
-               border-bottom: 12px dashed transparent;
+              
           }
      }
 
@@ -169,6 +180,7 @@
           text-decoration: none;
           cursor: pointer;
      }
+     
      /*** Estilizando o footer   */
      footer {
           --s: 82px; /* control the size*/
