@@ -1,14 +1,16 @@
 /************************************************************************************************ */
     /* Sorteio dos números de moedas */
         function sortearNumero(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+            return Math.floor(Math.random() * (max - min + 1)) + min
         }
 
         function realizarSorteio() {
-            const numeroSorteado = sortearNumero(1000, 10000);
-            document.getElementById("resultado").innerText = numeroSorteado + " Moedas... Agora escolha o seu herói!... ";
-        }
-/*********************************************************************************************** */
+            const numeroSorteado = sortearNumero(1000, 10000)
+            document.getElementById("resultado").innerText = numeroSorteado + " Moedas... Agora escolha o seu herói!... "
+        }     
+           
+
+    /*********************************************************************************************** */
     /**** Trabalhando os modais  */
    
     function abrirModal(){
@@ -19,7 +21,7 @@
             if(e.target.id == 'fechar' || e.target.id == 'janela-modal'){
                 modal.classList.remove('abrir')
             }
-        })
+        })        
     }
     function abrirModal2(){
         var modal = document.getElementById('janela-modal2');
@@ -90,4 +92,28 @@
                 modal.classList.remove('abrir8')
             }
         })
+    }
+
+
+    /*********************************************************************************************** */
+    /**** Trabalhando os NIVEIS DE PONTOS DOS HERÓIS...  */
+
+    function calcular() {
+        let nivel01 = 1000;
+        let nivel02 = 2000;
+
+        if( numeroSorteado < nivel01){
+            document.getElementById("ponto").innerHTML = "OPS! Não foi dessa vez!... Você possui apenas " + numeroSorteado +"Moedas"; 
+            document.getElementById("mensagem").innerHTML = "Busque mais recompensas na pedra do poder!..." + soma;
+        }
+        else if (numeroSorteado >= nivel01 && numeroSorteado < nivel02 ){
+            document.getElementById("ponto").innerHTML = "FERRO!...";
+            document.getElementById("mensagem").innerHTML = "Você possui " + numeroSorteado+ "... Busque mais recompensas e suba de nivel!...";
+        }
+        else{
+            document.getElementById("ponto").innerHTML = "FERRO!... ";
+            document.getElementById("mensagem").innerHTML = "Mas seu potencial pode avançar mais... Que tal um Bronze?...";
+        }
+        // Exibir o resultado no HTML
+       
     }

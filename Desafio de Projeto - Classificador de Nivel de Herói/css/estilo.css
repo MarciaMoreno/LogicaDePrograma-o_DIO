@@ -160,18 +160,18 @@
         .janela-modal7,.janela-modal8
         {
             width: 100vh; height: 100vh; position: relative; top: 0; left: 0;
-            background-color: rgba(0,0,0 0.5);
+            background-color: rgba(0,0,0, 0.5);
             display: none; align-items: center; justify-content: center; 
-            z-index: 999;
+            z-index: 999; border-radius: 30%;
         }
         .modal,.modal2,.modal3,
         .modal4,.modal5,.modal6,
         .modal7,.modal8
         {
             width: 60%; min-width: 360px; min-height: 200px;
-            background-color: rgba(255,255,255 0.589);
+            background-color: rgba(241, 221, 250, 0.589);
             backdrop-filter: blur(10px);
-            padding: 50px;  border-radius: 20px;
+            padding: 30px;  border-radius: 20px;
         }
         .fechar,.fechar2,.fechar3,.fechar4,
         .fechar5,.fechar6,.fechar7,.fechar8
