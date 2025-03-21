@@ -12,7 +12,8 @@
 
     /*********************************************************************************************** */
     /**** Trabalhando os modais  */
-   
+      
+
     function abrirModal(){
         var modal = document.getElementById('janela-modal');
         modal.classList.add('abrir')
@@ -21,8 +22,10 @@
             if(e.target.id == 'fechar' || e.target.id == 'janela-modal'){
                 modal.classList.remove('abrir')
             }
-        })        
+        })             
+        
     }
+
     function abrirModal2(){
         var modal = document.getElementById('janela-modal2');
         modal.classList.add('abrir2')
@@ -99,21 +102,8 @@
     /**** Trabalhando os NIVEIS DE PONTOS DOS HERÓIS...  */
 
     function calcular() {
-        let nivel01 = 1000;
-        let nivel02 = 2000;
-
-        if( numeroSorteado < nivel01){
-            document.getElementById("ponto").innerHTML = "OPS! Não foi dessa vez!... Você possui apenas " + numeroSorteado +"Moedas"; 
-            document.getElementById("mensagem").innerHTML = "Busque mais recompensas na pedra do poder!..." + soma;
+            
+            
+            // Exibir o resultado no HTML
+           
         }
-        else if (numeroSorteado >= nivel01 && numeroSorteado < nivel02 ){
-            document.getElementById("ponto").innerHTML = "FERRO!...";
-            document.getElementById("mensagem").innerHTML = "Você possui " + numeroSorteado+ "... Busque mais recompensas e suba de nivel!...";
-        }
-        else{
-            document.getElementById("ponto").innerHTML = "FERRO!... ";
-            document.getElementById("mensagem").innerHTML = "Mas seu potencial pode avançar mais... Que tal um Bronze?...";
-        }
-        // Exibir o resultado no HTML
-       
-    }
