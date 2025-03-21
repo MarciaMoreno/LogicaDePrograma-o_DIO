@@ -1,165 +1,257 @@
 <!DOCTYPE html>
-     <html lang="pt-br">
-          <head>
-               <meta charset="UTF-8">
-               <meta name="viewport" content="width=device-width, initial-scale=1.0">
-               <title>Home  Zeldianos</title>
-               <link rel="stylesheet" href="css/estilo.css">
-               <script src="index.js"></script>
-          </head>
-          <body>
-               <header>
-                    <h1 class="anton-regular h1">FIGHT ZONE HQs</h1>                    
-                    <h2 class="press-start-2p-regular tito">Escolha seu avatar e descubra seu nível de luta Zeldiano</h2>
-               </header>  
-               <main>
-                    <div class="recompensa">
-                         <p>Clique aqui e obtenha sua recompensa</p>
-                         <button onclick="realizarSorteio()">                 
-                         </button>
-                         <p id="resultado"></p>
+<html lang="pt-br">
+     <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Nivel dos Zeldianos</title>
+          <link rel="stylesheet" href="./css/estilo.css">
+          <script src="index.js"></script>
+     </head>
+     <body>
+          <header>
+               <h1 class="anton-regular h1">FIGHT ZONE HQs</h1>                    
+               <h2 class="press-start-2p-regular tito">Escolha seu avatar e descubra seu nível de luta Zeldiano</h2>
+          </header>
+          <main>
+               <div class="recompensa">
+                    <p>Clique na pedra do poder e obtenha sua recompensa</p>
+                    <button onclick="realizarSorteio()"></button>
+                    <p id="resultado"></p>
+                    <br><br>
+               </div>   
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel FERRO</P>
+                         <img src="./Imagens/Elina_elastico.png" alt="Heroi Zeldiano Wolvinho">
+                         <h3>Elina Elástico</h3>                        
+                    </div> 
+                    <div class="info_hero">
+                         <button onclick="abrirModal()" class="btn">Escolher Herói</button>
+                         <br>
+                         <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal" id="janela-modal">
+                              <div class="modal">
+                                   <button class="fechar" id="fechar">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                        <td>
+                         <tr><span>Habilidade Mor: <i class="answer">Alongamento dos membros.</i></span></tr><br>
+                         <tr><span>Inteligência: <i class="answer">Racional.</i></span></tr><br>
+                         <tr><span>Agilidade: <i class="answer">3.</i></span></tr><br>
+                         <tr><span>Nível de Força: <i class="answer">4.</i></span></tr><br>
+                         <tr><span>Ponto Fraco: <i class="answer">Calor e peso esorbitante.</i></span></tr><br>
+                        </td>                         
                     </div>
-                    <div class="container">
-                         <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel FERRO</P>
-                                   <img src="./Imagens/Elina_elastico.png" alt="Heroi Zeldiano Wolvinho">
-                                   <h3>Elina Elástico</h3>
-                              </div>                              
-                              <!-- Botão para abrir o modal -->
-                              <button id="openModal">Escolher Herói</button>
-                              <!-- Estrutura do Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <h2>Janela Modal</h2>
-                                        <p>Este é um exemplo de modal simples.</p>
-                                   </div>
-                              </div>
-                         </div>
-                         <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel OURO</P>
-                                   <img src="./Imagens/ema.png" alt="Heroi Zeldiano Wolvinho">
-                                   <h3>Ema Grandiosa</h3>
-                              </div>
-                              <!-- Botão para abrir a modal -->
-                              <button id="openModalBtn">Escolher Herói</button>
-                              <!-- A janela Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span id="closeBtn" class="close">&times;</span>
-                                        <h2>Este é uma janela Modal!</h2>
-                                        <p>Você pode adicionar conteúdo aqui.</p>
-                                   </div>
-                              </div>
-                         </div>
-                         <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel RADIANTE</P>
-                                   <img src="./Imagens/heroi01.png" alt="Heroi Zeldiano Wolvinho">
-                                   <h3>Wolvinho</h3>
-                              </div>
-                              <!-- Botão para abrir a modal -->
-                              <button id="openModalBtn">Escolher Herói</button>
-                              <!-- A janela Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span id="closeBtn" class="close">&times;</span>
-                                        <h2>Este é uma janela Modal!</h2>
-                                        <p>Você pode adicionar conteúdo aqui.</p>
-                                   </div>
-                              </div>
-                         </div>  
-                         <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel BRONZE</P>
-                                   <img src="./Imagens/heroi02.png" alt="Heroi Zeldiano Wolvinho">
-                                   <h3>Bubbleman</h3>
-                              </div>
-                              <!-- Botão para abrir a modal -->
-                              <button id="openModalBtn">Escolher Herói</button>
-                              <!-- A janela Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span id="closeBtn" class="close">&times;</span>
-                                        <h2>Este é uma janela Modal!</h2>
-                                        <p>Você pode adicionar conteúdo aqui.</p>
-                                   </div>
-                              </div>
-                         </div>                       
-                        <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel PLATINA</P>
-                                   <img src="./Imagens/heroi03.png" alt="Heroi Zeldiano CaptainKid">
-                                   <h3>CaptainKid</h3>
-                              </div>
-                              <!-- Botão para abrir a modal -->
-                              <button id="openModalBtn">Escolher Herói</button>
-                              <!-- A janela Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span id="closeBtn" class="close">&times;</span>
-                                        <h2>Este é uma janela Modal!</h2>
-                                        <p>Você pode adicionar conteúdo aqui.</p>
-                                   </div>
-                              </div>
-                        </div>
-                        <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel PRATA</P>
-                                   <img src="./Imagens/Kiko Esperto.png" alt="Heroi Zeldiano Wolvinho">
-                                   <h3>Kiko Esperto</h3>
-                              </div>
-                              <!-- Botão para abrir a modal -->
-                              <button id="openModalBtn">Escolher Herói</button>
-                              <!-- A janela Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span id="closeBtn" class="close">&times;</span>
-                                        <h2>Este é uma janela Modal!</h2>
-                                        <p>Você pode adicionar conteúdo aqui.</p>
-                                   </div>
-                              </div>
-                        </div>
-                         <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel ASCENDENTE</P>
-                                   <img src="./Imagens/superDraco.png" alt="Heroi Zeldiano Bubbleman">
-                                   <h3>Super Draco</h3>
-                              </div>    
-                              <!-- Botão para abrir a modal -->
-                              <button id="openModalBtn">Escolher Herói</button>
-                              <!-- A janela Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span id="closeBtn" class="close">&times;</span>
-                                        <h2>Este é uma janela Modal!</h2>
-                                        <p>Você pode adicionar conteúdo aqui.</p>
-                                   </div>
-                              </div>
-                         </div>
-                         <div class="hero">
-                              <div class="zeldiano_hero">
-                                   <P>Nivel IMORTAL</P>
-                                   <img src="./Imagens/superKid.png" alt="Heroi Zeldiano Wolvinho">
-                                   <h3>Super Kid</h3>
-                              </div>
-                              <!-- Botão para abrir a modal -->
-                              <button id="openModalBtn">Escolher Herói</button>
-                              <!-- A janela Modal -->
-                              <div id="myModal" class="modal">
-                                   <div class="modal-content">
-                                        <span id="closeBtn" class="close">&times;</span>
-                                        <h2>Este é uma janela Modal!</h2>
-                                        <p>Você pode adicionar conteúdo aqui.</p>
-                                   </div>
-                              </div>
-                         </div>                         
+               </section>
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel OURO</P>
+                         <img src="./Imagens/ema.png" alt="Heroi Zeldiano Wolvinho">
+                         <h3>Ema Grandiosa</h3>                         
                     </div>
-               </main>
-               <footer>
-                    <h2>MarciaMoreno - 2025 &copy; - Nazaré do Piuaí</h2>
-               </footer>               
-          </body>
-     </html>
+                    <div class="info_hero">
+                         <button onclick="abrirModal2()" class="btn">Escolher Herói</button>
+                         <br>
+                         <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal2" id="janela-modal2">
+                              <div class="modal2">
+                                   <button class="fechar2" id="fechar2">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consect2etur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                         <td>
+                          <tr><span>Habilidade Mor: <i class="answer">Força Máxima.</i></span></tr><br>
+                          <tr><span>Inteligência: <i class="answer">Razão.</i></span></tr><br>
+                          <tr><span>Agilidade: <i class="answer">5.</i></span></tr><br>
+                          <tr><span>Nível de Força: <i class="answer">1.</i></span></tr><br>
+                          <tr><span>Ponto Fraco: <i class="answer">'Gas do riso'.</i></span></tr><br>
+                         </td>                         
+                     </div>
+               </section>
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel RADIANTE</P>
+                         <img src="./Imagens/heroi01.png" alt="Heroi Zeldiano Wolvinho">
+                         <h3>Wolvinho</h3>                        
+                    </div>
+                    <div class="info_hero">
+                         <button onclick="abrirModal3()" class="btn">Escolher Herói</button>
+                         <br>
+                          <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal3" id="janela-modal3">
+                              <div class="modal3">
+                                   <button class="fechar3" id="fechar3">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                         <td>
+                          <tr><span>Habilidade Mor: <i class="answer">Garras Hiper Cortantes.</i></span></tr><br>
+                          <tr><span>Inteligência: <i class="answer">Bruta.</i></span></tr><br>
+                          <tr><span>Agilidade: <i class="answer">5.</i></span></tr><br>
+                          <tr><span>Nível de Força: <i class="answer">1.</i></span></tr><br>
+                          <tr><span>Ponto Fraco: <i class="answer">Não possui</i></span></tr><br>
+                         </td>                         
+                     </div>
+               </section>
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel BRONZE</P>
+                         <img src="./Imagens/heroi02.png" alt="Heroi Zeldiano Wolvinho">
+                         <h3>Bubbleman</h3>                         
+                    </div>
+                    <div class="info_hero">
+                         <button onclick="abrirModal4()" class="btn">Escolher Herói</button>
+                         <br>
+                         <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal4" id="janela-modal4">
+                              <div class="modal4">
+                                   <button class="fechar4" id="fechar4">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                         <td>
+                          <tr><span>Habilidade Mor: <i class="answer">Bolha de invisibilidade indestrutível.</i></span></tr><br>
+                          <tr><span>Inteligência: <i class="answer">Alto Conhecimento</i>.</i></span></tr><br>
+                          <tr><span>Agilidade: <i class="answer">2.</i></span></tr><br>
+                          <tr><span>Nível de Força: <i class="answer">4.</i></span></tr><br>
+                          <tr><span>Ponto Fraco: <i class="answer">Radiação concentrada.</i></span></tr><br>
+                         </td>
+                         
+                     </div>
+               </section>
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel PLATINA</P>
+                         <img src="./Imagens/heroi03.png" alt="Heroi Zeldiano CaptainKid">
+                         <h3>CaptainKid</h3>                         
+                    </div>
+                    <div class="info_hero">
+                         <button onclick="abrirModal5()" class="btn">Escolher Herói</button>
+                         <br>
+                         <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal5" id="janela-modal5">
+                              <div class="modal5">
+                                   <button class="fechar5" id="fechar5">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                         <td>
+                          <tr><span>Habilidade Mor: <i class="answer">Força Incondicional.</i></span></tr><br>
+                          <tr><span>Inteligência: <i class="answer">Razão.</i></span></tr><br>
+                          <tr><span>Agilidade: <i class="answer">2.</i></span></tr><br>
+                          <tr><span>Nível de Força: <i class="answer">2.</i></span></tr><br>
+                          <tr><span>Ponto Fraco: <i class="answer">Regeneração</i></span></tr><br>
+                         </td>
+                          
+                     </div>
+               </section>     
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel PRATA</P>
+                         <img src="./Imagens/Kiko Esperto.png" alt="Heroi Zeldiano Wolvinho">
+                         <h3>Kiko Esperto</h3>                         
+                    </div>
+                    <div class="info_hero">
+                         <button onclick="abrirModal6()" class="btn">Escolher Herói</button>
+                         <br>
+                         <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal6" id="janela-modal6">
+                              <div class="modal6">
+                                   <button class="fechar6" id="fechar6">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                         <td>
+                          <tr><span>Habilidade Mor: <i class="answer">Inteligência e Velocidade.</i></span></tr><br>
+                          <tr><span>Inteligência: <i class="answer">Alto Conhecimento.</i></span></tr><br>
+                          <tr><span>Agilidade: <i class="answer">1.</i></span></tr><br>
+                          <tr><span>Nível de Força: <i class="answer">5.</i></span></tr><br>
+                          <tr><span>Ponto Fraco: <i class="answer">Regeneração</i></span></tr><br>
+                         </td>
+                          
+                     </div>
+               </section>    
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel ASCENDENTE</P>
+                         <img src="./Imagens/superDraco.png" alt="Heroi Zeldiano Bubbleman">
+                         <h3>Super Draco</h3>                         
+                    </div>
+                    <div class="info_hero">
+                         <button onclick="abrirModal7()" class="btn">Escolher Herói</button>
+                         <br>
+                         <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal7" id="janela-modal7">
+                              <div class="modal7">
+                                   <button class="fechar7" id="fechar7">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                         <td>
+                          <tr><span>Habilidade Mor: <i class="answer">Força Incondicional e voo supremos.</i></span></tr><br>
+                          <tr><span>Inteligência: <i class="answer">Razão.</i></span></tr><br>
+                          <tr><span>Agilidade: <i class="answer">1.</i></span></tr><br>
+                          <tr><span>Nível de Força: <i class="answer">2.</i></span></tr><br>
+                          <tr><span>Ponto Fraco: <i class="answer">Pedra radiotiva</i></span></tr><br>
+                         </td>                          
+                     </div>
+               </section>   
+               <section class="zona_zeldiana">
+                    <div class="zeldiano_hero">
+                         <P>Nivel IMORTAL</P>
+                         <img src="./Imagens/superKid.png" alt="Heroi Zeldiano Wolvinho">
+                         <h3>Super Kid</h3>                         
+                    </div>
+                    <div class="info_hero">
+                         <button onclick="abrirModal8()" class="btn">Escolher Herói</button>
+                         <br>
+                         <!--Inserindo a JANELA mODAL-->
+                         <div class="janela-modal8" id="janela-modal8">
+                              <div class="modal8">
+                                   <button class="fechar8" id="fechar8">X</button>
+                                   <h1>Janela Modal</h1>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore totam dolores 
+                                   nesciunt doloremque? Itaque distinctio at eum hic ducimus. Doloremque, laborum
+                                   quam ipsa corporis hic esse suscipit tenetur necessitatibus odio.</p>
+                              </div>
+                         </div>
+                         <td>
+                          <tr><span>Habilidade Mor: <i class="answer">Força Incondicional e voo supremo.</i></span></tr><br>
+                          <tr><span>Inteligência: <i class="answer">Emocional.</i></span></tr><br>
+                          <tr><span>Agilidade: <i class="answer">1.</i></span></tr><br>
+                          <tr><span>Nível de Força: <i class="answer">1.</i></span></tr><br>
+                          <tr><span>Ponto Fraco: <i class="answer">Radiação ultra violeta</i></span></tr><br>
+                         </td>
+                         
+                     </div>
+               </section>               
+          </main>
+          <footer>
+               <h2>MarciaMoreno - 2025 &copy; - Nazaré do Piuaí</h2>
+          </footer>
+     </body>
+</html>
+
+
