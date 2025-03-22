@@ -1,4 +1,25 @@
-    /* Sorteio dos números de moedas */
+    /* Estilizando o AUDIO OU TRILHA da página */
+        document.addEventListener("DOMContentLoaded", function() {
+            let audio = document.getElementById("backgroundMusic");
+            let button = document.getElementById("toggleButton");
+
+            // Tentar iniciar a música automaticamente
+            audio.play().catch(error => {
+                console.log("Autoplay bloqueado, usuário precisa interagir primeiro.");
+            });
+
+            button.addEventListener("click", function() {
+                if (audio.paused) {
+                    audio.play();
+                    button.textContent = "Pausar Trilha";
+                } else {
+                    audio.pause();
+                    button.textContent = "Tocar Trilha";
+                }
+            });
+        });   
+    
+    /* Sorteio dos números de moedas */    
 
         let numeroSorteado = 0; // Variável global
 

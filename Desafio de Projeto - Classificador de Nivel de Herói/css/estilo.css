@@ -30,7 +30,7 @@
             margin: 0 auto; padding: 0;
             flex-wrap: wrap; min-width: 360px;             
         }
-        main{ background-color: #565a59; color: aliceblue; }
+        main{ background-color: #565a59; color: aliceblue; border-top: dotted 12px #36d3c1; }
         p{ font-size: 1.4rem; }
         ul li{ list-style: none;}
         header,footer{ text-align: center;}
@@ -57,12 +57,17 @@
         .h1{
             font-size: 6rem;  font-family: "Monoton", sans-serif; font-weight: 200;
             word-spacing: 20px; background-color: var(--c1); color: var(--c2);
-            border-bottom: dotted 18px #36d3c1 ; margin: 5%; margin-top: 5%;
+            margin: 5%; margin-top: 5%;
         }
         .tito{ 
             padding: 40px; color: #f5f599; 
             text-shadow: 2px 4px 18px #2e2635, 4px 8px 22px #2e2635, 8px 16px 42px #2e2635;
        }
+        .audio {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
 /****************************************************************************************************
 ******* Estilização da div das MOEDAS */
