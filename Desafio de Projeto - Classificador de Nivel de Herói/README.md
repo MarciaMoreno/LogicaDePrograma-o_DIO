@@ -48,4 +48,8 @@ Bora ver como eu deixei esse 'coisa no ponto'...
 > #HOME DO PROJETO FINALIZADO...
 <div align="center">
      <img src="./prints-do-projeto/desafio_finalizado.jpeg" alt="foto da home do projeto finalizado">
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 1e8917b65d66001050511e8e96490ff3bc549b72
