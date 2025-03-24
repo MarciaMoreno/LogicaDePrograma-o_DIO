@@ -1,5 +1,5 @@
 <div align="right"><img src="./assets/prints/icon_dio_single.png" alt=""></div>
-<h1 align="center">Desafio Lógica de Programação - Classificador de Nível de Herói - <a href="https://dio.me/"> DIO (Digital Inovation One)</a></h1>
+<h1 align="center">Desafio Lógica de Programação - Classificador de Nível de Herói  <a href="https://dio.me/"> DIO (Digital Inovation One)</a></h1>
 
 > **O Que deve ser utilizado no script...**
 
@@ -48,8 +48,6 @@ Bora ver como eu deixei esse 'coisa no ponto'...
 > #HOME DO PROJETO FINALIZADO...
 <div align="center">
      <img src="./prints-do-projeto/desafio_finalizado.jpeg" alt="foto da home do projeto finalizado">
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> 1e8917b65d66001050511e8e96490ff3bc549b72
+
+
