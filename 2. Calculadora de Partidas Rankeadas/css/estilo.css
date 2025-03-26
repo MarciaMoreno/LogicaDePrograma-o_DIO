@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
+
+/******************************************************************************************************************
+***************DESAFIO DE PROJETO - Lógica de Programação - Nazaré do Piauí 18/03 ********************************/
+
+    /*** Fontes do GOOGLE  */
+          .monoton-regular {
+               font-family: "Monoton", sans-serif;
+               font-weight: 400;
+               font-style: normal;
+          }
+          .press-start-2p-regular {
+               font-family: "Press Start 2P", system-ui;
+               font-weight: 400;
+               font-style: normal;
+          }
+          .texto {
+               font-family: "42dot Sans", sans-serif;
+               font-optical-sizing: auto;
+               font-weight: 400;
+               font-style: normal;
+          }    
+/****************************************************************************************************
+********* Estilização do BODY */
+          body{
+               flex-wrap: wrap; margin: 0 auto; padding: 0; min-width: 360px;
+               background: linear-gradient(-45deg, #4c99e2 0%, #1E64A9 30%, #1E64A9 100%);            
+          }
+          a { text-decoration: none;}
+          p{ font-size: 1.4rem; }
+          ul li{ list-style: none;}
+          header, footer{ text-align: center;}
+          main { 
+               display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+               background-image: url("../Imagens/main_backg.png");
+               background-repeat: no-repeat; background-size: 100% 400%;
+          }
+/****************************************************************************************************
+********* Estilização do Header */
+          header, footer{
+               --s: 100px; /* control the size*/
+               --c1: #0B3E5A;
+               --c2: #00071E;
+               --c3: #389196;
+               --c4: #A2AFA0;
+               text-align: center;
+               background:
+               conic-gradient(from  45deg at 75% 75%, var(--c3) 90deg,var(--c1) 0 180deg,#0000 0),
+               conic-gradient(from -45deg at 25% 25%, var(--c3) 90deg,#0000 0),
+               conic-gradient(from -45deg at 50% 100%,#0000 180deg,var(--c3) 0),
+               conic-gradient(from -45deg,var(--c1) 90deg, var(--c2) 0 225deg,var(--c4) 0);
+               background-size: var(--s) var(--s); 
+
+          }
+          .h1{
+               font-size: 4rem;  font-family: "Monoton", sans-serif; font-weight: 200;
+               word-spacing: 20px; color: #f7ed65;
+               text-shadow: 18px 32px 30px #322d32; width: 100%;
+          }    
+/****************************************************************************************************
+********* Estilização do Main  */ 
+          .container_hero{ display: block; justify-items: center; text-align: center;}
+          .container_hero img{
+               width: 160px; object-fit: contain; object-position: center;
+          }
+        
+ /****************************************************************************************************
+********* Estilização do Footer */        
+          
+          footer{
+               padding: 20px; color: gold;
+               font-family: "Press Start 2P", system-ui; 
+                         
+          }
+          footer h2{ text-shadow: 2px 2px 0 #2d262e;  }
