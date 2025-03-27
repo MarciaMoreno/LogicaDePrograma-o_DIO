@@ -9,29 +9,117 @@
             </head>
             <body>
                   <header>
-                        <h1 class="h1"> Gladiadores KIDS</h1>
+                        <h1 class="h1"><button id="botao" class="btn">Trilha Musical</button> Gladiadores KIDS</h1>
+                        <audio id="trilha" loop>
+                              <source src="./sound/LifeGames.mp3" type="audio/mp3">
+                                    Seu navegador não suporta audio player...
+                        </audio>
+                        <div class="recompensa">
+                              <p>Retire aqui sua recompensa por participar do sorteio e escolha seu gladiador...</p>
+                              <button onclick="realizarSorteio()" class="moeda"></button>
+                              <p id="resultado"></p>
+                        </div>
                   </header>
-                  <div class="recompensa">
-                        <p>Sorteie aqui sua recompensa por participar do sorteio</p>
-                        <button onclick="realizarSorteio()"></button>
-                        <p id="resultado"></p>
-                  </div>
+                  
                   <main>
-                        <div class="container_hero">
-                              <img src="./Imagens/soldado01.png" alt="Soldado Romano kid 01">
-                              <button onclick="janelaModal()" class="btn"></button>
+                        <div class="zona_hero">
+                              <div class="container_hero">
+                                    <img src="./Imagens/soldado01.png" alt="Soldado Romano kid 01">
+                                    <button onclick="abrirModal('janela-modal1')" class="btn">Xande, O Grande</button>
+                              </div>                              
+                              <div class="janela-modal" id="janela-modal1">
+                                    <div class="modal">
+                                          <button class="fechar" onclick="fecharModal('janela-modal1')" id="fechar">X</button>
+                                                <figure>
+                                                      <img width="100" height="150" src="./Imagens/soldado01.png" alt="Xande, O grandinho">
+                                                      <figcaption>
+                                                            <span>Parabéns pela escolha</span>
+                                                            <h2>Xandinho o Grande</h2>
+                                                      </figcaption>
+                                                </figure>                                
+                                                <p>Agora... <br>Escolha seu Oponente</p>
+                                                <div class="container_oponente">
+                                                      <div class="oponente">
+                                                            <div class="btn" onclick="escolherOponente('Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                                                  <button id="fechar-oponente" class="fechar" onclick="fecharOponente('info')">X</button>
+                                                                  <span>Monstrinho Cara-Amarrada</span>
+                                                                  <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">
+                                                            </div>
+                                                            <div id="info" class="info">                                                               
+                                                                  <button class="btn" onclick="lutar()">Lutar</button>
+                                                            </div> 
+                                                      </div>
+                                                     
+                                                      <button class="btn" onclick="escolherOponente('Monstrinho Peludão', 77, 'OURO')">
+                                                            <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Peludão">
+                                                            Escolher
+                                                      </button>
+                                                      <div id="info" class="info"></div>
+                                                      <button class="btn" onclick="escolherOponente('Monstrinho Medonho', 85, 'DIAMANTE')"><img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Medonho">Escolher</button>
+                                                      <div id="info" class="info"></div>
+                                                      <button class="btn" onclick="escolherOponente('Monstrinho Abraçador', 42, 'PRATA')"><img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Abraçador">Escolher</button>
+                                                      <div id="info" class="info"></div>                                              
+                                                      
+                                                      <button class="btn" onclick="escolherOponente('Monstrinho Dente-Careado', 91, 'PLATINA')"><img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Dente-Careado">Escolher</button>
+                                                      <div id="info" class="info"></div>
+                                                      <button class="btn" onclick="escolherOponente('Monstrinho Come-come', 15, 'BRONZE')"><img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">Escolher</button>
+                                                      <div  id="info" class="info"></div>
+                                                      <button class="btn" onclick="escolherOponente('Monstrinho Raivoso-Supremo', 100, 'IMORTAL')"><img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Raivoso-Supremo">Escolher</button>
+                                                      <div id="info" class="info"></div>
+                                                </div>                                         
+                                    </div>
+                              </div>
                         </div>
-                        <div class="container_hero">
-                              <img src="./Imagens/soldado02.png" alt="Soldado Romano kid 02">
-                              <button onclick="janelaModal()" class="btn"></button>
+                        <div class="zona_hero">
+                              <div class="container_hero">
+                                    <img src="./Imagens/soldado02.png" alt="Soldado Romano kid 02">
+                                    <button onclick="abrirModal('janela-modal2')" class="btn">Carlito, O valente</button>
+                              </div>                              
+                              <div class="janela-modal" id="janela-modal2">
+                                    <div class="modal">
+                                          <button class="fechar" onclick="fecharModal('janela-modal2')" id="fechar">X</button>
+                                          <h2>Janela Modal</h2>
+                                          <p>
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ratione natus nihil 
+                                          laudantium cum consequuntur nesciunt qui, animi officiis aspernatur, accusamus
+                                          fuga a aut necessitatibus voluptates mollitia ad quasi voluptatem.
+                                          </p>
+                                    </div>
+                              </div>
                         </div>
-                        <div class="container_hero">
-                              <img src="./Imagens/soldado03.png" alt="Soldado Romano kid 03">
-                              <button onclick="janelaModal()" class="btn"></button>
+                        <div class="zona_hero">
+                              <div class="container_hero">
+                                    <img src="./Imagens/soldado03.png" alt="Soldado Romano kid 03">                              
+                                    <button onclick="abrirModal('janela-modal3')" class="btn">Brunito, O elegante</button>
+                              </div>                              
+                              <div class="janela-modal" id="janela-modal3">
+                                    <div class="modal">
+                                          <button class="fechar" onclick="fecharModal('janela-modal3')" id="fechar">X</button>
+                                          <h2>Janela Modal</h2>
+                                          <p>
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ratione natus nihil 
+                                          laudantium cum consequuntur nesciunt qui, animi officiis aspernatur, accusamus
+                                          fuga a aut necessitatibus voluptates mollitia ad quasi voluptatem.
+                                          </p>
+                                    </div>
+                              </div>
                         </div>
-                        <div class="container_hero">
-                              <img src="./Imagens/soldado04.png" alt="Soldado Romano kid 04">
-                              <button onclick="janelaModal()" class="btn"></button>
+                        <div class="zona_hero">
+                              <div class="container_hero">
+                                    <img src="./Imagens/soldado04.png" alt="Soldado Romano kid 04">
+                                    <button onclick="abrirModal('janela-modal4')" class="btn">Ivanzinho,O viking</button>
+                              </div>                              
+                              <div class="janela-modal" id="janela-modal4">
+                                    <div class="modal">
+                                          <button class="fechar" onclick="fecharModal('janela-modal4')" id="fechar">X</button>
+                                          <h2>Janela Modal</h2>
+                                          <p>
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ratione natus nihil 
+                                          laudantium cum consequuntur nesciunt qui, animi officiis aspernatur, accusamus
+                                          fuga a aut necessitatibus voluptates mollitia ad quasi voluptatem.
+                                          </p>
+                                    </div>
+                              </div>
                         </div>
                   </main>
                   <footer>
