@@ -1,493 +1,506 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-      <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Calculadora de Partidas Rankeadas</title>
-            <link rel="stylesheet" href="./css/estilo.css">
-            <script src="index.js" defer></script>
-      </head>
-      <body>
-            <header>
-                  <h1 class="h1"><button id="botao" class="btn">Trilha Musical</button> Gladiadores KIDS</h1>
-                  <audio id="trilha" loop>
-                        <source src="./sound/LifeGames.mp3" type="audio/mp3">
-                              Seu navegador não suporta audio player...
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Calculadora de Partidas Rankeadas</title>
+      <link rel="stylesheet" href="css/estilo.css">
+      <script src="index.js" defer></script>
+</head>
+<body>
+      <header>
+            <div>
+                  <button id="botao" class="btn">TRILHA MUSICAL</button>
+                  <audio id="trilha" lop>
+                        <source src="./sound/LifeGame.mp3" type="audio/mp3">
+                        Seu navegador não suporta audio... 
                   </audio>
-                  <div class="recompensa">
-                        <p>Retire aqui sua recompensa por participar do sorteio e escolha seu gladiador...</p>
-                        <button onclick="realizarSorteio()" class="moeda"></button>
-                        <p id="resultado"></p>
+            </div>
+            <div class="h1">
+                  <h1>Gladiadores KIDs</h1>
+            </div>
+      </header>
+      <main>
+            <section class="recompensa">
+                  <p>Retire aqui sua recompensa por participar do sorteio e escolha seu gladiador...</p>
+                  <button onclick="realizarSorteio()" class="moeda"></button>
+                  <p id="resultado"></p>
+            </section>
+            <section class="zona-de-herois">
+                  <div class="heroi">
+                        <img src="./Imagens/soldado01.png" alt="Soldado Romano kid 01">
+                        <button onclick="abrirModal('janela-modal1')" class="btn">Xande, O Grande</button>
                   </div>
-            </header>
-            <main>
-                  <div class="zona_de_heroi">
-                        <div class="heroi">
-                              <img src="./Imagens/soldado01.png" alt="Soldado Romano kid 01">
-                              <button onclick="abrirModal('janela-modal1')" class="btn">Xande, O Grande</button>
+                  <div class="janela-modal" id="janela-modal1">
+                        <div class="modal">
+                              <button class="fechar_modal" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
+                              <figure>
+                                    <img width="100" height="150" src="./Imagens/soldado01.png" alt="Xande, O grandinho">
+                                      <figcaption>
+                                                <span>Parabéns pela escolha</span>
+                                                <h2>Xandinho o Grande</h2>
+                                                <p>Agora... <br>Escolha seu Oponente</p>
+                                      </figcaption>
+                              </figure>   
+                              <div class="galeria-de-oponentes">
+                                    <!--PRIMEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info1','Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                              <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">                                              
+                                          </div>
+                                          <div id="info1" class="info">
+                                                <div class="content_info"></div>
+                                                <button class="fechar_oponente" onclick="fecharOponente('info1')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Cara-Amarrada', 5, 'FERRO')">Disputar Torneio</div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>  
+                                    <!--SEGUNDO OPONENTE-->                                    
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info2','Monstrinho Come-come', 15, 'BRONZE')">
+                                              <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
+                                          </div>
+                                          <div id="info2" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info2')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Come-come', 15, 'BRONZE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--TERCEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info3','Monstrinho Abraçador', 42, 'PRATA')">
+                                              <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info3" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info3')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Abraçador', 42, 'PRATA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUARTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info4','Monstrinho Peludão', 77, 'OURO')">
+                                              <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info4" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info4')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Peludão', 77, 'OURO')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUINTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info5','Monstrinho Medonho', 85, 'DIAMANTE')">
+                                              <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info5" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info5')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Medonho', 85, 'DIAMANTE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SEXTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info6','Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                              <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info6" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info6')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SETIMO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info7','Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                              <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info7" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info7')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                              </div>          
                         </div>
-                        <div class="janela-modal" id="janela-modal1">
-                              <div class="modal">
-                                    <button class="fechar" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
-                                    <div class="container_modal">
-                                          <div class="escolhido">
-                                                <figure>
-                                                      <img width="100" height="150" src="./Imagens/soldado01.png" alt="Xande, O grandinho">
-                                                        <figcaption>
-                                                                  <span>Parabéns pela escolha</span>
-                                                                  <h2>Xandinho o Grande</h2>
-                                                                  <p>Agora... <br>Escolha seu Oponente</p>
-                                                        </figcaption>
-                                                </figure>           
-                                          </div>
-                                          <div class="galeria_de_oponentes">
-                                                <!--PRIMEIRO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Come-come', 15, 'BRONZE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
-                                                            <div  id="info1" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info1')" id="fechar1">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta1" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--SEGUNDO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Cara-Amarrada', 5, 'FERRO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">
-                                                            <div  id="info2" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info2')" id="fechar2">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta2" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--TERCEIRO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Abraçador', 42, 'PRATA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Abraçador">
-                                                            <div id="info3" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info3')" id="fechar3">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta3" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--QUARTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Peludão', 77, 'OURO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Peludão">
-                                                            <div id="info4" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info4')" id="fechar4">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta4" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--QUINTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Medonho', 85, 'DIAMANTE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Medonho">
-                                                            <div id="info5" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info5')" id="fechar5">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta5" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SEXTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Dente-Careado', 91, 'PLATINA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Dente-Careado">
-                                                            <div id="info6" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info6')" id="fechar6">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta6" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SÉTIMO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
-                                                            <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Raivoso-Supremo">
-                                                            <div id="info7" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info7')" id="fechar7">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta7" class="luta-decidida"></p>      
-                                                      </div>
-                                                </div>                                                
-                                          </div>
-                                    </div>                                
-                             </div>
-                        </div>    
                   </div>
-                  <div class="zona_de_heroi">
-                        <div class="heroi">
-                              <img src="./Imagens/soldado02.png" alt="Soldado Romano kid 01">
-                              <button onclick="abrirModal('janela-modal1')" class="btn">Carlito, O Valente</button>
+                  <div class="heroi">
+                        <img src="./Imagens/soldado02.png" alt="Soldado Romano kid 02">
+                        <button onclick="abrirModal('janela-modal2')" class="btn">Carlito, Valente</button>
+                  </div>
+                  <div class="janela-modal" id="janela-modal2">
+                        <div class="modal">
+                              <button class="fechar_modal" onclick="fecharModal('janela-modal2')" id="fechar2">X</button>
+                              <figure>
+                                    <img width="100" height="150" src="./Imagens/soldado02.png" alt="Carlito, Valente">
+                                      <figcaption>
+                                                <span>Parabéns pela escolha</span>
+                                                <h2>Carlito, Valente</h2>
+                                                <p>Agora... <br>Escolha seu Oponente</p>
+                                      </figcaption>
+                              </figure>
+                              <div class="galeria-de-oponentes">
+                                    <!--PRIMEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info8','Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                              <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">                                              
+                                          </div>
+                                          <div id="info8" class="info">
+                                                <div class="content_info"></div>
+                                                <button class="fechar_oponente" onclick="fecharOponente('info8')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>  
+                                    <!--SEGUNDO OPONENTE-->                                    
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info9','Monstrinho Come-come', 15, 'BRONZE')">
+                                              <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
+                                          </div>
+                                          <div id="info9" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info9')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Come-come', 15, 'BRONZE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--TERCEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info10','Monstrinho Abraçador', 42, 'PRATA')">
+                                              <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info10" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info10')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this, 'Monstrinho Abraçador', 42, 'PRATA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUARTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info11','Monstrinho Peludão', 77, 'OURO')">
+                                              <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info11" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info11')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this, 'Monstrinho Peludão', 77, 'OURO')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUINTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info12','Monstrinho Medonho', 85, 'DIAMANTE')">
+                                              <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info12" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info12')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Medonho', 85, 'DIAMANTE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SEXTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info13','Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                              <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info13" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info13')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SETIMO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info14','Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                              <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info14" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info14')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                              </div>                                                   
                         </div>
-                        <div class="janela-modal" id="janela-modal1">
-                              <div class="modal">
-                                    <button class="fechar" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
-                                    <div class="container_modal">
-                                          <div class="escolhido">
-                                                <figure>
-                                                      <img width="100" height="150" src="./Imagens/soldado02.png" alt="Carlito, O Valente">
-                                                        <figcaption>
-                                                                  <span>Parabéns pela escolha</span>
-                                                                  <h2>Carlito, O Valente</h2>
-                                                                  <p>Agora... <br>Escolha seu Oponente</p>
-                                                        </figcaption>
-                                                </figure>           
-                                          </div>
-                                          <div class="galeria_de_oponentes">
-                                                <!--PRIMEIRO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Come-come', 15, 'BRONZE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
-                                                            <div  id="info1" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info1')" id="fechar1">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta1" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--SEGUNDO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Cara-Amarrada', 5, 'FERRO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">
-                                                            <div  id="info2" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info2')" id="fechar2">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta2" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--TERCEIRO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Abraçador', 42, 'PRATA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Abraçador">
-                                                            <div id="info3" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info3')" id="fechar3">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta3" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--QUARTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Peludão', 77, 'OURO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Peludão">
-                                                            <div id="info4" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info4')" id="fechar4">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta4" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--QUINTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Medonho', 85, 'DIAMANTE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Medonho">
-                                                            <div id="info5" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info5')" id="fechar5">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta5" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SEXTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Dente-Careado', 91, 'PLATINA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Dente-Careado">
-                                                            <div id="info6" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info6')" id="fechar6">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta6" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SÉTIMO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
-                                                            <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Raivoso-Supremo">
-                                                            <div id="info7" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info7')" id="fechar7">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta7" class="luta-decidida"></p>      
-                                                      </div>
-                                                </div>                                                
-                                          </div>
-                                    </div>                                
-                             </div>
-                        </div>    
                   </div>
-                  <div class="zona_de_heroi">
-                        <div class="heroi">
-                              <img src="./Imagens/soldado03.png" alt="Soldado Romano kid 01">
-                              <button onclick="abrirModal('janela-modal1')" class="btn">Bruninho, Elegante</button>
+                  <div class="heroi">
+                        <img src="./Imagens/soldado03.png" alt="Soldado Romano kid 03">
+                        <button onclick="abrirModal('janela-modal3')" class="btn">Bruno, O Elegante</button> 
+                  </div>
+                  <div class="janela-modal" id="janela-modal3">
+                        <div class="modal">
+                              <button class="fechar_modal" onclick="fecharModal('janela-modal3')" id="fechar3">X</button>
+                              <figure>
+                                    <img width="100" height="150" src="./Imagens/soldado03.png" alt="Bruno, O Elegante">
+                                      <figcaption>
+                                                <span>Parabéns pela escolha</span>
+                                                <h2>Bruno, O Elegante</h2>
+                                                <p>Agora... <br>Escolha seu Oponente</p>
+                                      </figcaption>
+                              </figure>  
+                              <div class="galeria-de-oponentes">
+                                    <!--PRIMEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info15','Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                              <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">                                              
+                                          </div>
+                                          <div id="info15" class="info">
+                                                <div class="content_info"></div>
+                                                <button class="fechar_oponente" onclick="fecharOponente('info15')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>  
+                                    <!--SEGUNDO OPONENTE-->                                    
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info16','Monstrinho Come-come', 15, 'BRONZE')">
+                                              <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
+                                          </div>
+                                          <div id="info16" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info16')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Come-come', 15, 'BRONZE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--TERCEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info17','Monstrinho Abraçador', 42, 'PRATA')">
+                                              <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info17" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info17')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this, 'Monstrinho Abraçador', 42, 'PRATA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUARTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info18','Monstrinho Peludão', 77, 'OURO')">
+                                              <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info18" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info18')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this, 'Monstrinho Peludão', 77, 'OURO')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUINTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info19','Monstrinho Medonho', 85, 'DIAMANTE')">
+                                              <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info19" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info19')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Medonho', 85, 'DIAMANTE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SEXTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info20','Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                              <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info20" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info20')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SETIMO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info21','Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                              <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info21" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info21')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                              </div>
                         </div>
-                        <div class="janela-modal" id="janela-modal1">
-                              <div class="modal">
-                                    <button class="fechar" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
-                                    <div class="container_modal">
-                                          <div class="escolhido">
-                                                <figure>
-                                                      <img width="100" height="150" src="./Imagens/soldado03.png" alt="Bruninho, Elegante">
-                                                        <figcaption>
-                                                                  <span>Parabéns pela escolha</span>
-                                                                  <h2>Bruninho, Elegante</h2>
-                                                                  <p>Agora... <br>Escolha seu Oponente</p>
-                                                        </figcaption>
-                                                </figure>           
-                                          </div>
-                                          <div class="galeria_de_oponentes">
-                                                <!--PRIMEIRO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Come-come', 15, 'BRONZE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
-                                                            <div  id="info1" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info1')" id="fechar1">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta1" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--SEGUNDO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Cara-Amarrada', 5, 'FERRO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">
-                                                            <div  id="info2" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info2')" id="fechar2">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta2" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--TERCEIRO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Abraçador', 42, 'PRATA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Abraçador">
-                                                            <div id="info3" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info3')" id="fechar3">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta3" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--QUARTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Peludão', 77, 'OURO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Peludão">
-                                                            <div id="info4" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info4')" id="fechar4">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta4" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--QUINTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Medonho', 85, 'DIAMANTE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Medonho">
-                                                            <div id="info5" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info5')" id="fechar5">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta5" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SEXTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Dente-Careado', 91, 'PLATINA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Dente-Careado">
-                                                            <div id="info6" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info6')" id="fechar6">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta6" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SÉTIMO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
-                                                            <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Raivoso-Supremo">
-                                                            <div id="info7" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info7')" id="fechar7">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta7" class="luta-decidida"></p>      
-                                                      </div>
-                                                </div>                                                
-                                          </div>
-                                    </div>                                
-                             </div>
-                        </div>    
                   </div>
-                  <div class="zona_de_heroi">
-                        <div class="heroi">
-                              <img src="./Imagens/soldado04.png" alt="Soldado Romano kid 01">
-                              <button onclick="abrirModal('janela-modal1')" class="btn">Ivanzinho, O vinking</button>
+                  <div class="heroi">
+                        <img src="./Imagens/soldado04.png" alt="Soldado Romano kid 04">
+                        <button onclick="abrirModal('janela-modal4')" class="btn">Ivanzinho, Viking</button>
+                  </div>
+                  <div class="janela-modal" id="janela-modal4">
+                        <div class="modal">
+                              <button class="fechar_modal" onclick="fecharModal('janela-modal4')" id="fechar4">X</button>
+                              <figure>
+                                    <img width="100" height="150" src="./Imagens/soldado04.png" alt="Ivanzinho, Viking">
+                                      <figcaption>
+                                                <span>Parabéns pela escolha</span>
+                                                <h2>Ivanzinho, Viking</h2>
+                                                <p>Agora... <br>Escolha seu Oponente</p>
+                                      </figcaption>
+                              </figure>  
+                              <div class="galeria-de-oponentes">
+                                    <!--PRIMEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info22','Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                              <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">                                              
+                                          </div>
+                                          <div id="info22" class="info">
+                                                <div class="content_info"></div>
+                                                <button class="fechar_oponente" onclick="fecharOponente('info22')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Cara-Amarrada', 5, 'FERRO')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>  
+                                    <!--SEGUNDO OPONENTE-->                                    
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info23','Monstrinho Come-come', 15, 'BRONZE')">
+                                              <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
+                                          </div>
+                                          <div id="info23" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info23')">X</button>
+                                          </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Come-come', 15, 'BRONZE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--TERCEIRO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info24','Monstrinho Abraçador', 42, 'PRATA')">
+                                              <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info24" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info24')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this, 'Monstrinho Abraçador', 42, 'PRATA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUARTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info25','Monstrinho Peludão', 77, 'OURO')">
+                                              <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info25" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info25')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this, 'Monstrinho Peludão', 77, 'OURO')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--QUINTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info26','Monstrinho Medonho', 85, 'DIAMANTE')">
+                                              <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info26" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info26')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Medonho', 85, 'DIAMANTE')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SEXTO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info27','Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                              <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info27" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info27')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Dente-Careado', 91, 'PLATINA')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                                    <!--SETIMO OPONENTE-->
+                                    <div class="oponente">
+                                          <div class="btn" onclick="escolherOponente('info28','Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                              <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Come-come">                                              
+                                          </div>
+                                          <div id="info28" class="info">
+                                                <button class="fechar_oponente" onclick="fecharOponente('info28')">X</button>
+                                              </div>
+                                          <div class="btn lutar" onclick="resolverDisputa(this,'Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
+                                                <span>Disputar Torneio</span>
+                                          </div>
+                                          <p id="disputado"></p>
+                                          <p id="disputado_concluido"></p>
+                                    </div>
+                              </div>
                         </div>
-                        <div class="janela-modal" id="janela-modal1">
-                              <div class="modal">
-                                    <button class="fechar" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
-                                    <div class="container_modal">
-                                          <div class="escolhido">
-                                                <figure>
-                                                      <img width="100" height="150" src="./Imagens/soldado04.png" alt="Ivanzinho, O vinking">
-                                                        <figcaption>
-                                                                  <span>Parabéns pela escolha</span>
-                                                                  <h2>Ivanzinho, O vinking</h2>
-                                                                  <p>Agora... <br>Escolha seu Oponente</p>
-                                                        </figcaption>
-                                                </figure>           
-                                          </div>
-                                          <div class="galeria_de_oponentes">
-                                                <!--PRIMEIRO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Come-come', 15, 'BRONZE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro02.png" alt="Monstrinho Come-come">
-                                                            <div  id="info1" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info1')" id="fechar1">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta1" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--SEGUNDO OPONENTE-->
-                                                <div class="oponente" >
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Cara-Amarrada', 5, 'FERRO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro01.png" alt="Monstrinho Cara-Amarrada">
-                                                            <div  id="info2" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info2')" id="fechar2">X</button>
-                                                            </div>
-                                                      </div>
-                                                     <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta2" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--TERCEIRO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Abraçador', 42, 'PRATA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro03.png" alt="Monstrinho Abraçador">
-                                                            <div id="info3" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info3')" id="fechar3">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()" class="lutar btn" >
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta3" class="luta-decidida"></p>
-                                                     </div>
-                                                </div>
-                                                <!--QUARTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Peludão', 77, 'OURO')">
-                                                            <img class="oponente_img" src="./Imagens/monstro04.png" alt="Monstrinho Peludão">
-                                                            <div id="info4" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info4')" id="fechar4">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta4" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--QUINTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Medonho', 85, 'DIAMANTE')">
-                                                            <img class="oponente_img" src="./Imagens/monstro05.png" alt="Monstrinho Medonho">
-                                                            <div id="info5" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info5')" id="fechar5">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta5" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SEXTO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Dente-Careado', 91, 'PLATINA')">
-                                                            <img class="oponente_img" src="./Imagens/monstro06.png" alt="Monstrinho Dente-Careado">
-                                                            <div id="info6" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info6')" id="fechar6">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta6" class="luta-decidida"></p>
-                                                      </div>
-                                                </div>
-                                                <!--SÉTIMO OPONENTE-->
-                                                <div class="oponente">
-                                                      <div class="btn" onclick="escolherOponente('Monstrinho Raivoso-Supremo', 100, 'IMORTAL')">
-                                                            <img class="oponente_img" src="./Imagens/monstro07.png" alt="Monstrinho Raivoso-Supremo">
-                                                            <div id="info7" class="info">
-                                                                  <button class="fechar" onclick="fecharOponente('info7')" id="fechar7">X</button>
-                                                            </div>
-                                                      </div>
-                                                      <div onclick="lutar()"  class="lutar btn">
-                                                            <span>Disputar Torneio</span>
-                                                            <p id="decidir-luta7" class="luta-decidida"></p>      
-                                                      </div>
-                                                </div>                                                
-                                          </div>
-                                    </div>                                
-                             </div>
-                        </div>    
                   </div>
-            </main>
-            <footer>
-                  <h2>Marcia Moreno - 2025 &copy; / Nazaré do Piauí</h2>
-            </footer>
-      </body>
+            </section>
+      </main>
+      <footer>
+            <h2>Marcia Moreno - 2025 &copy; / Nazaré do Piauí</h2>
+      </footer>
+</body>
 </html>
