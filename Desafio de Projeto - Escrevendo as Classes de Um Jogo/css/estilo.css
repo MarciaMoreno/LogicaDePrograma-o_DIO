@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
+/******************************************************************************************************************
+***************DESAFIO DE PROJETO - Lógica de Programação - Nazaré do Piauí 18/03 ********************************/
+
+      /*** Fontes do GOOGLE  */
+      .monoton-regular {
+        font-family: "Monoton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .press-start-2p-regular {
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .texto {
+        font-family: "42dot Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }    
+/****************************************************************************************************
+********* Estilização do BODY */
+      body{
+        flex-wrap: wrap; min-width: 360px; margin: 0 auto; padding: 0;
+      }
+      
+      header, footer{
+        text-align: center; padding: 4px;        
+          --s: 50px; /* control the size*/
+          --c1: #fbc35b;
+          --c2: #9943df;
+          --c3: #5b4f69;
+          
+          --p:at 45% 40%,#0000 75%,;
+          --g1:conic-gradient(var(--p) var(--c1) 0);
+          --g2:conic-gradient(var(--p) var(--c2) 0);
+          background:
+            var(--g1),var(--g2) calc(2*var(--s)) 0,
+            var(--g2) calc(3*var(--s)) var(--s),
+            var(--g1) var(--s) var(--s) var(--c3);
+          background-size: calc(4*var(--s)) calc(2*var(--s));
+        opacity: .8;
+      }
+      
+/****************************************************************************************************
+********* Estilização do HEADER */
+      h1 { font-size: 52px; text-shadow:  4px 4px 0 #813c08, 2px 12px 32px #4b5b46; color:#faf450; padding-top: 72px; }
+      h2{ font-size: 82px; color: #17d9af; text-shadow: 2px 4px 2px #0a0a0a; margin-top: -15px;}
+/****************************************************************************************************
+********* Estilização do MAIN */
+      .video-background {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .video-background video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Faz o vídeo cobrir toda a div */
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      .titulo-especial{ 
+        padding: 20px; font-family: "Press Start 2P", system-ui; font-size: medium; color: #faf450;
+        width: 500px;  margin: auto; line-height: 32px;
+      }
+      .zona-de-herois{
+        display: flex; justify-content: center; align-items: center; min-width: 350px;
+      }
+      .heroi{ display: block; justify-content: center; text-align: center;}
+      .heroi img{ 
+        width: 300px; height: 300px; object-fit: fill; object-position: center;
+        filter: drop-shadow( 5px 10px 15px #bb0e70 ); position: relative;
+      }
+      .heroi img:hover{ filter: drop-shadow( 5px 10px 15px #faf450c3 ); }
+
+      .btn{
+        width: 200px; height: 100px; border-bottom-width: 12px; padding: 10px 22px;
+        border-bottom-color: #9943df; background-color: transparent; cursor: pointer;
+        box-shadow: inset 3px 9px 19px #bb0e70; border-radius: 22px;
+        font-family: "Monoton", sans-serif; color: #faf450; font-weight: 300; font-size: 1.5rem;
+      }
+      .btn:hover{
+        box-shadow: inset 3px 9px 19px #9943df; border-bottom-color: #9713c7; 
+        background-color: #17d9af; color: #0a0a0a;
+      }
+
+      /*** Estilização da ESTRUTURA NAS JANELAS MODAIS... */
+      .janela-modal{
+            max-width: 1500px; height: auto;  position: absolute; flex-wrap: wrap;
+            background-color: rgba(0,0,0, 0.5); top: 10px; right: 0px;
+            display: none; align-items: center; justify-content: center;
+            min-width: 360px; padding-bottom: 10%; z-index: 1;            
+      }
+      .modal{
+            width: 80%; min-width: 360px; margin: 2% 5%; 
+            background-color: rgba(255,255,255, 0.589); flex-wrap: wrap;
+            backdrop-filter: blur(10px); padding: 20px; border-radius: 20px;
+            font-family: "Press Start 2P", system-ui; color: #00071E;
+      }
+      .fechar_modal{
+            position: absolute; top: -10px; right: -10px; cursor: pointer;
+            width: 30px; height: 30px; border-radius: 50%; border: 0;
+            background-color: red; color: #f7ed65; font-size: 22px;
+      }
+      .janela-modal.abrir{ display: flex; flex-wrap: wrap; }
+
+      @keyframes abrirModal {
+            from{
+                opacity: 0; transform: translate3d( 0,-20px,-5px);
+            }
+            to{
+                opacity: 1; transform: translate3d(0,0,0);
+            }
+      }
+      .abrir .modal{ animation: abrirModal 0.5s}
+      
+/****************************************************************************************************
+********* Estilização do FOOTER */
+      footer{
+        color: #faf450; font-size: 1.4rem; text-shadow: 2px 2px 0 #0a0a0a;
+      }

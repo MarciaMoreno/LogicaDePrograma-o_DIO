@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio - Escrevendo a classe de um jogo</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="index.js" defer></script>
+    </head>
+    <body>
+        <header>
+          <h1 class="press-start-2p-regular">Hero's Weapons</h1>
+        </header>
+        <main>
+            <div class="video-background">
+              <video autoplay muted loop>
+                  <source src="./video/back_star.mp4" type="video/mp4">
+                  Seu navegador não suporta vídeos.
+              </video>
+            <div class="content">
+                <div class="trilha">
+                  <button id="botao" class="btn">Trilha Musical <br><br></button>
+                  <audio id="trilha" loop>
+                    <source src="./sound/WaveOnTheFloor.mp3" type="audio/mp3">
+                      Seu navegador não suporta vídeos.
+                  </audio>
+                </div>
+                <p class="titulo-especial">Ajude esses heróis a conquistarem suas armas de super-força... </p>
+                <div class="zona-de-herois">
+                  <div class="heroi">
+                    <img src="./Imagem/guerreiro-completo.png" alt="Imagem do guerreiro completo">
+                    <button class="btn" onclick="abrirModal('janela-modal1')">PLAY</button>
+                  </div>
+                  <div class="janela-modal" id="janela-modal1">
+                    <div class="modal">
+                      <button class="fechar_modal" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
+                      <span>Janela Modal</span>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, saepe reiciendis accusantium illum, necessitatibus sunt vero cum, doloremque tempora magni at? Corrupti totam voluptas numquam nam veritatis, ipsa dolore alias.</p>
+                    </div>
+                  </div>
+                  <div class="heroi">
+                    <img src="./Imagem/mago-completo.png" alt="Imagem do mago completo">
+                    <button class="btn" id="btn02" onclick="escolherHeroi()">PLAY</button>
+                  </div>
+                  <div class="heroi">
+                    <img src="./Imagem/monge-completo.png" alt="Imagem do monge completo">
+                    <button class="btn" id="btn03" onclick="escolherHeroi()">PLAY</button>
+                  </div>
+                  <div class="heroi">
+                    <img src="./Imagem/ninja-completo.png" alt="Imagem do ninja completo">
+                    <button class="btn" id="btn04" onclick="escolherHeroi()">PLAY</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+        </main>
+        <footer>
+            <h3 class="texto">Marcia Moreno - 2025 &copy; - Nazaré do Piauí</h3>
+        </footer>
+    </body>
+</html>
