@@ -25,6 +25,7 @@
 ********* Estilização do BODY */
       body{
         flex-wrap: wrap; min-width: 360px; margin: 0 auto; padding: 0;
+        overflow: fixed;
       }
       
       header, footer{
@@ -47,7 +48,7 @@
       
 /****************************************************************************************************
 ********* Estilização do HEADER */
-      h1 { font-size: 52px; text-shadow:  4px 4px 0 #813c08, 2px 12px 32px #4b5b46; color:#faf450; padding-top: 72px; }
+      h1 { font-size: 52px; text-shadow:  4px 4px 0 #813c08, 2px 4px 12px #222621, 12px 14px 22px #4b5b46; color:#faf450; padding-top: 72px; }
       h2{ font-size: 82px; color: #17d9af; text-shadow: 2px 4px 2px #0a0a0a; margin-top: -15px;}
 /****************************************************************************************************
 ********* Estilização do MAIN */
@@ -55,7 +56,8 @@
         position: relative;
         width: 100%;
         height: 100vh;
-        overflow: hidden;
+        overflow-y: scroll;
+        overflow-x: hidden;
       }
 
       .video-background video {
@@ -78,7 +80,7 @@
 
       .titulo-especial{ 
         padding: 20px; font-family: "Press Start 2P", system-ui; font-size: medium; color: #faf450;
-        width: 500px;  margin: auto; line-height: 32px;
+        width: 500px;  margin: auto; line-height: 32px; text-shadow: 2px 2px 0 #00071E;
       }
       .zona-de-herois{
         display: flex; justify-content: center; align-items: center; min-width: 350px;
@@ -103,16 +105,18 @@
 
       /*** Estilização da ESTRUTURA NAS JANELAS MODAIS... */
       .janela-modal{
-            max-width: 1500px; height: auto;  position: absolute; flex-wrap: wrap;
-            background-color: rgba(0,0,0, 0.5); top: 10px; right: 0px;
+            width: 1500px; height: auto;  position: absolute; flex-wrap: wrap;
+            background-color: rgba(0,0,0, 0.5); top: 10px; right: auto; left:auto;
             display: none; align-items: center; justify-content: center;
             min-width: 360px; padding-bottom: 10%; z-index: 1;            
       }
       .modal{
             width: 80%; min-width: 360px; margin: 2% 5%; 
-            background-color: rgba(255,255,255, 0.589); flex-wrap: wrap;
+            background-color: rgba(252, 252, 246, 0.711); flex-wrap: wrap;
             backdrop-filter: blur(10px); padding: 20px; border-radius: 20px;
             font-family: "Press Start 2P", system-ui; color: #00071E;
+            
+            
       }
       .fechar_modal{
             position: absolute; top: -10px; right: -10px; cursor: pointer;
@@ -130,7 +134,27 @@
             }
       }
       .abrir .modal{ animation: abrirModal 0.5s}
-      
+      /*** Estilizando o CONTEUDO DENTRO DAS JANELAS MODAIS....  */
+      .conteudo_modal{
+          display: block; justify-content: center; align-items: center; text-align: center;
+      }
+      .nome_heroi{
+        color:#bb0e70; font-size: 1.6rem; text-shadow: 5px 5px 0 #17d9af;
+      }
+      .zona_armamento{
+        display: flex; justify-content: space-evenly; align-items: center; text-align: center;
+        font-size: 1.2rem;
+      }
+      .arsenal {
+        display: flex; justify-content: center; align-items: center; text-align: center;
+      }
+      .arsenal img{
+        width: 140px; height: 180px; margin: 3px; object-fit: contain; object-position: center;
+        border-radius: 20px; box-shadow: inset 2px 4px 18px #9943df;
+      }
+      .arsenal img:hover{
+        box-shadow: inset 2px 4px 18px #fbc35b;background: linear-gradient(-45deg, #5b4f69, #f7ed65, #17d9af);
+      }
 /****************************************************************************************************
 ********* Estilização do FOOTER */
       footer{

@@ -13,46 +13,94 @@
         </header>
         <main>
             <div class="video-background">
-              <video autoplay muted loop>
-                  <source src="./video/back_star.mp4" type="video/mp4">
-                  Seu navegador não suporta vídeos.
-              </video>
-            <div class="content">
-                <div class="trilha">
-                  <button id="botao" class="btn">Trilha Musical <br><br></button>
-                  <audio id="trilha" loop>
-                    <source src="./sound/WaveOnTheFloor.mp3" type="audio/mp3">
-                      Seu navegador não suporta vídeos.
-                  </audio>
-                </div>
-                <p class="titulo-especial">Ajude esses heróis a conquistarem suas armas de super-força... </p>
-                <div class="zona-de-herois">
-                  <div class="heroi">
-                    <img src="./Imagem/guerreiro-completo.png" alt="Imagem do guerreiro completo">
-                    <button class="btn" onclick="abrirModal('janela-modal1')">PLAY</button>
-                  </div>
-                  <div class="janela-modal" id="janela-modal1">
-                    <div class="modal">
-                      <button class="fechar_modal" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
-                      <span>Janela Modal</span>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, saepe reiciendis accusantium illum, necessitatibus sunt vero cum, doloremque tempora magni at? Corrupti totam voluptas numquam nam veritatis, ipsa dolore alias.</p>
+                <video autoplay muted loop>
+                    <source src="./video/back_star.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <div class="content">
+                    <div class="trilha">
+                        <button id="botao" class="btn">Trilha Musical <br><br></button>
+                        <audio id="trilha" loop>
+                          <source src="./sound/WaveOnTheFloor.mp3" type="audio/mp3">
+                            Seu navegador não suporta vídeos.
+                        </audio>
+                    </div>                    
+                    <div class="zona-de-herois">
+                        <!---Inicio JANELA MODAL 01-->
+                        <div class="heroi">
+                            <img src="./Imagem/guerreiro-completo.png" alt="Imagem do guerreiro completo">
+                            <button class="btn" onclick="abrirModal('janela-modal1')">PLAY</button>
+                        </div>
+                        <div class="janela-modal" id="janela-modal1">
+                            <div class="modal">
+                                <button class="fechar_modal" onclick="fecharModal('janela-modal1')" id="fechar1">X</button>
+                                <div class="conteudo_modal">
+                                    <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
+                                    <p class="nome_heroi">Guerreiro Intergalático</p>
+                                    <div class="zona_armamento">
+                                        <img width="200" src="./Imagem/avatar/guerreiro.png" alt="Molde do Guerreiro Intergalático">
+                                        <div id="heroiInfo1"></div>
+                                    </div>
+                                    <p class="titulo-especial">Escolha a arma que mais combinar...</p>
+                                    <div class="arsenal">
+                                        <div class="item_arma" >
+                                            <img src="./Imagem/armas/bastao.png" alt="arma intergalática tipo 01">
+                                        </div>
+                                        <div class="item_arma">
+                                            <img src="./Imagem/armas/cajado.png" alt="arma intergalática tipo 02">
+                                        </div>
+                                        <div class="item_arma">
+                                            <img src="./Imagem/armas/escudo.png" alt="arma intergalática tipo 03">
+                                        </div>
+                                        <div class="item_arma">
+                                            <img src="./Imagem/armas/espada-guerreiro.png" alt="arma intergalática tipo 04">
+                                        </div>
+                                        <div class="item_arma">
+                                            <img src="./Imagem/armas/katana.png" alt="arma intergalática tipo 05">
+                                        </div>
+                                        <div class="item_arma">
+                                            <img src="./Imagem/armas/pedra-poder.png" alt="arma intergalática tipo 06">
+                                        </div>
+                                    </div>
+                                </div>                              
+                            </div>
+                        </div>
+                        <!---Inicio JANELA MODAL 02-->
+                        <div class="heroi">
+                            <img src="./Imagem/mago-completo.png" alt="Imagem do mago completo">
+                            <button class="btn" id="btn02" onclick="abrirModal('janela-modal2')">PLAY</button>
+                        </div>
+                        <div class="janela-modal" id="janela-modal2">
+                            <div class="modal">
+                                <button class="fechar_modal" onclick="fecharModal('janela-modal2')" id="fechar2">X</button>
+                                <span>Janela Modal</span>
+                            </div>
+                        </div>
+                        <!---Inicio JANELA MODAL 03-->
+                        <div class="heroi">
+                            <img src="./Imagem/monge-completo.png" alt="Imagem do monge completo">
+                            <button class="btn" id="btn03" onclick="abrirModal('janela-modal3')">PLAY</button>
+                        </div>
+                        <div class="janela-modal" id="janela-modal3">
+                            <div class="modal">
+                                <button class="fechar_modal" onclick="fecharModal('janela-modal3')" id="fechar3">X</button>
+                                <span>Janela Modal</span>
+                            </div>
+                        </div>
+                        <!---Inicio JANELA MODAL 04-->
+                        <div class="heroi">
+                            <img src="./Imagem/ninja-completo.png" alt="Imagem do ninja completo">
+                            <button class="btn" id="btn04" onclick="abrirModal('janela-modal4')">PLAY</button>
+                        </div>
+                        <div class="janela-modal" id="janela-modal4">
+                            <div class="modal">
+                                <button class="fechar_modal" onclick="fecharModal('janela-modal4')" id="fechar4">X</button>
+                                <span>Janela Modal</span>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="heroi">
-                    <img src="./Imagem/mago-completo.png" alt="Imagem do mago completo">
-                    <button class="btn" id="btn02" onclick="escolherHeroi()">PLAY</button>
-                  </div>
-                  <div class="heroi">
-                    <img src="./Imagem/monge-completo.png" alt="Imagem do monge completo">
-                    <button class="btn" id="btn03" onclick="escolherHeroi()">PLAY</button>
-                  </div>
-                  <div class="heroi">
-                    <img src="./Imagem/ninja-completo.png" alt="Imagem do ninja completo">
-                    <button class="btn" id="btn04" onclick="escolherHeroi()">PLAY</button>
-                  </div>
                 </div>
             </div>
-        </div>
         </main>
         <footer>
             <h3 class="texto">Marcia Moreno - 2025 &copy; - Nazaré do Piauí</h3>
