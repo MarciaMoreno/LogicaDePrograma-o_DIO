@@ -1,116 +1,140 @@
-    /*ESTRUTURANSO a trilha musical da página */
-    document.addEventListener("DOMContentLoaded", function(){
-      let audio = document.getElementById("trilha");
-      let button = document.getElementById("botao");
+/*ESTRUTURANSO a trilha musical da página */
+document.addEventListener("DOMContentLoaded", function(){
+  let audio = document.getElementById("trilha");
+  let button = document.getElementById("botao");
 
-      //Tenta iniciar a música automaticamente... 
-      audio.play().catch(error =>{
-        console.log("Autoplay Bloqueado pelo Navegador...")
-      });
+  //Tenta iniciar a música automaticamente... 
+    audio.play().catch(error =>{
+    console.log("Autoplay Bloqueado pelo Navegador...")
+  });
 
-      button.addEventListener("click", function(){
-        if(audio.paused){
-          audio.play();
-          button.textContent = "Pausar Trilha";
-        }else{
-          audio.pause();
-          button.textContent= "Tocar Trilha";
-        }
-      });
-    });
+  button.addEventListener("click", function(){
+  if(audio.paused){
+    audio.play();
+    button.textContent = "Pausar Trilha";
+  }else{
+    audio.pause();
+    button.textContent= "Tocar Trilha";
+  }
+  });
+});
 
-    /**** Montando as Estruturas das JANELAS MODAIS... */
-    function abrirModal(id){
-      const modal = document.getElementById(id)
+/**** Montando as Estruturas das JANELAS MODAIS... */
+  function abrirModal(id){
+    const modal = document.getElementById(id)
       modal.classList.add('abrir');
+  }
+
+  function fecharModal(id){
+    const modal = document.getElementById(id)
+    if(modal){
+      modal.classList.remove('abrir');
     }
+}
 
-    function fecharModal(id){
-      const modal = document.getElementById(id)
-      if(modal){
-        modal.classList.remove('abrir');
-      }
+
+  /**** Montando as funções de CONTEUDO DAS JANELAS... */
+  /*Construindo a estrutura do heroi...    */
+  let id = " ";
+  let idArma = " ";
+  class heroiMagico {
+    constructor(id, tipo, nivel, ataque) {
+      this.id = id;
+      this.tipo = tipo;
+      this.nivel = nivel;
+      this.ataque = ataque;
     }
+  }
 
-     /**** Montando as funções de CONTEUDO DAS JANELAS... */
-        /*Construindo a estrutura do heroi...     */
-        class heroiMagico{
-          constructor(id, tipo, nivel, ataque){
-            this.id = id;
-            this.tipo = tipo;
-            this.nivel = nivel;
-            this.ataque = ataque;
-          }
-        }
-        // Criando um objeto
-        const heroUm = new heroiMagico("Sirius","Guerreiro",2,"Lâmina Infinita de Orion")
-        const heroDois = new heroiMagico("Mostargo","Mago",4,"Pedra do Poder Infinito")
-        const heroTres = new heroiMagico("Lee san","Monge",3,"Bastão Flutuante")
-        const heroQuatro = new heroiMagico("Kitsu","Ninja",1,"Katana do destino sombrio")
 
-         // Pegando a div pelo ID
-         const heroiDiv1 = document.getElementById("heroiInfo1");
-         const heroiDiv2 = document.getElementById("heroiInfo2");
-         const heroiDiv3 = document.getElementById("heroiInfo3");
-         const heroiDiv4 = document.getElementById("heroiInfo4");
+// Criando os objetos
+  const heroUm = new heroiMagico("Sirius", "Guerreiro", 2, "Lâmina Infinita de Orion");
+  const heroDois = new heroiMagico("Mostargo", "Mago", 4, "Pedra do Poder Infinito");
+  const heroTres = new heroiMagico("Lee san", "Monge", 3, "Bastão Flutuante");
+  const heroQuatro = new heroiMagico("Kitsu", "Ninja", 1, "Katana do destino sombrio");
 
-         heroiDiv1.innerHTML = `
-            <h3>Herói Mágico</h3>
-            <p><strong>ID:</strong> ${heroUm.id}</p>
-            <p><strong>Tipo:</strong> ${heroUm.tipo}</p>
-            <p><strong>Nível:</strong> ${heroUm.nivel}</p>
-            <p><strong>Ataque:</strong> ${heroUm.ataque}</p>
-        `;
+// Pegando as divs
+  const div1 = document.getElementById("heroiInfo1");
+  const div2 = document.getElementById("heroiInfo2");
+  const div3 = document.getElementById("heroiInfo3");
+  const div4 = document.getElementById("heroiInfo4");
 
-        heroiDiv2.innerHTML = `
-            <h3>Herói Mágico</h3>
-            <p><strong>ID:</strong> ${heroDois.id}</p>
-            <p><strong>Tipo:</strong> ${heroDois.tipo}</p>
-            <p><strong>Nível:</strong> ${heroDois.nivel}</p>
-            <p><strong>Ataque:</strong> ${heroDois.ataque}</p>
-        `;
+  // Função para exibir o herói
+  function exibirHeroi(div, heroi) {
+    if (div){
+      div.innerHTML = `
+      <h3>Herói Mágico</h3>
+      <p><strong>Nome:</strong> ${heroi.id}</p>
+      <p><strong>Tipo:</strong> ${heroi.tipo}</p>
+      <p><strong>Nível:</strong> ${heroi.nivel}</p>
+      <p><strong>Ataque:</strong> ${heroi.ataque}</p>
+      `;
+    }
+  }
 
-        heroiDiv3.innerHTML = `
-            <h3>Herói Mágico</h3>
-            <p><strong>ID:</strong> ${heroTres.id}</p>
-            <p><strong>Tipo:</strong> ${heroTres.tipo}</p>
-            <p><strong>Nível:</strong> ${heroTres.nivel}</p>
-            <p><strong>Ataque:</strong> ${heroTres.ataque}</p>
-        `;
+// Exibir cada herói
+  exibirHeroi(div1, heroUm);
+  exibirHeroi(div2, heroDois);
+  exibirHeroi(div3, heroTres);
+  exibirHeroi(div4, heroQuatro);
 
-        heroiDiv4.innerHTML = `
-            <h3>Herói Mágico</h3>
-            <p><strong>ID:</strong> ${heroiDiv4.id}</p>
-            <p><strong>Tipo:</strong> ${heroiDiv4.tipo}</p>
-            <p><strong>Nível:</strong> ${heroiDiv4.nivel}</p>
-            <p><strong>Ataque:</strong> ${heroiDiv4.ataque}</p>
-        `;
+  class armaMagica{
+    constructor(idArma, nivelArma, ataqueArma){
+      this.idArma = idArma;
+      this.nivelArma = nivelArma;
+      this.ataqueArma = ataqueArma;
+    }
+  }
+    
+  const armaUm = new armaMagica('Bastão Dourado', 100, 'Força Repelidora');
+  const armaDois = new armaMagica('Cajado Mágico', 800, 'Transmite o desejo para a pedra do poder');
+  const armaTres= new armaMagica('Escudo Solarium', 700, 'Bloqueio Universal de qualquer ataque');
+  const armaQuatro = new armaMagica('Espada Estelar', 900, 'Lâmina Infinita de Orion');
+  const armaCinco = new armaMagica('Katana Fujikan', 400, 'Corte das duas faces');
+  const armaSeis = new armaMagica('Pedra do Poder Absoluto', 1000,'Realizador de desejos');
 
-        /*Construindo a estrutura da arma do herói...     */
-        class itemMagico {
-          // Crie adequadamente um construtor que receba todos os atributos referente ao item mágico:
-            constructor(tipoItem, danoItem, resistenciaItem) {
-              this.tipoItem = tipoItem;
-              this.danoItem = danoItem; 
-              this.resistenciaItem = resistenciaItem;
-            }          
-            calcularDano() {
-              return this.tipoItem === "arma" ? this.danoItem * 2 : this.danoItem;
-            }
-          }
-      
-      // Solicita ao usuário para digitar o tipo do item mágico, o dano no item e a resistência do item
-      const tipoItem = gets();
-      const danoItem = parseInt(gets());
-      const resistenciaItem = parseInt(gets());
-      
-      //TODO: Crie o de um objeto ItemMagico personalizado com base no tipo escolhido
-      let itemPersonalizado = new ItemMagico(tipoItem, danoItem, resistenciaItem  )
-      // TODO: Imprima os atributos do item personalizado
-      print("Tipo: " + itemPersonalizado.tipoItem);
-      print("Dano: " + itemPersonalizado.danoItem);
-      print("Resistencia: " + itemPersonalizado.resistenciaItem);
-      
-      // Calcula e imprime o dano causado pelo item personalizado em um combate simulado
-      const danoTotal = itemPersonalizado.calcularDano();
-      print("Dano em combate: " + danoTotal);
+  const div5 = document.getElementById("armaInfo1");
+  const div6 = document.getElementById("armaInfo2");
+  const div7 = document.getElementById("armaInfo3");
+  const div8 = document.getElementById("armaInfo4");
+  const div9 = document.getElementById("armaInfo5");
+  const div10 = document.getElementById("armaInfo6");
+
+  function exibirArma(div, arma) {
+    if (div){
+      div.innerHTML = `
+        <h3>Arma Mágica</h3>
+        <p><strong>Nome:</strong> ${arma.idArma}</p>
+        <p><strong>Nível:</strong> ${arma.nivelArma}</p>
+        <p><strong>Ataque:</strong> ${arma.ataqueArma}</p>
+        <button class="fechar-info" onclick="fecharInfo('${div.id}')">X</button>
+      `;
+    }
+  }
+  
+
+  exibirArma(div5, armaUm);
+  exibirArma(div6, armaDois);
+  exibirArma(div7, armaTres);
+  exibirArma(div8, armaQuatro);
+  exibirArma(div9, armaCinco);
+  exibirArma(div10, armaSeis);
+
+  function mostrarInfo(id) {
+    const infoDiv = document.getElementById(id);
+    if (infoDiv) {
+      infoDiv.style.display = 'block';
+    }
+  }
+  
+  function fecharInfo(id) {
+    const infoDiv = document.getElementById(id);
+    if (infoDiv) {
+      infoDiv.style.display = 'none';
+    }
+  }
+
+  function escolherArma1(btn, id, idArma){
+    
+  }
+  

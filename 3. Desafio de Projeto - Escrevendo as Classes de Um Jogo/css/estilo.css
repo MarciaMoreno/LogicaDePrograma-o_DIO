@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&family=Anton&family=Bytesized&family=Monoton&family=PT+Sans+Narrow:wght@400;700&family=Press+Start+2P&display=swap');
+
 /******************************************************************************************************************
 ***************DESAFIO DE PROJETO - Lógica de Programação - Nazaré do Piauí 18/03 ********************************/
 
@@ -21,42 +22,60 @@
         font-weight: 400;
         font-style: normal;
       }    
+
+
 /****************************************************************************************************
-********* Estilização do BODY */
-      body{
-        flex-wrap: wrap; min-width: 360px; margin: 0 auto; padding: 0;
-        overflow: fixed;
+********* Estilização dos ITENS DO BODY */
+      a{ text-decoration: none;}
+      ul li{ list-style: none;}
+      body{ 
+        background-color: #00071E;
       }
-      
-      header, footer{
-        text-align: center; padding: 4px;        
-          --s: 50px; /* control the size*/
-          --c1: #fbc35b;
-          --c2: #9943df;
-          --c3: #5b4f69;
-          
-          --p:at 45% 40%,#0000 75%,;
-          --g1:conic-gradient(var(--p) var(--c1) 0);
-          --g2:conic-gradient(var(--p) var(--c2) 0);
-          background:
-            var(--g1),var(--g2) calc(2*var(--s)) 0,
-            var(--g2) calc(3*var(--s)) var(--s),
-            var(--g1) var(--s) var(--s) var(--c3);
-          background-size: calc(4*var(--s)) calc(2*var(--s));
-        opacity: .8;
+      header{
+        display: flex; justify-content: space-evenly; text-align: center; align-items: center;
       }
-      
+      .btn{
+        width: 200px; height: 100px; border-bottom-width: 12px; padding: 10px 22px;
+        border-bottom-color: #9943df; background-color: transparent; cursor: pointer;
+        box-shadow: inset 3px 9px 19px #9943df; border-radius: 22px; 
+        font-family: "Monoton", sans-serif; color: #faf450; font-weight: 300; font-size: 1.5rem;
+      }
+      .btn:hover{
+        box-shadow: inset 3px 9px 19px #9943df; border-bottom-color: #9713c7; 
+        background-color: #17d9af; color: #0a0a0a;
+      }
+      .btn_arma{
+        padding: 10px 2px; color: #17d9af;
+        border-bottom-color: #342341; background-color: transparent; cursor: pointer;
+        box-shadow: inset 3px 9px 19px #9943df; border-radius: 22px; background-color: #280738;
+        font-family: "Monoton", sans-serif; font-weight: 300; font-size: 1.5rem; letter-spacing: 3px;
+      }
+      .btn_arma:hover{
+        box-shadow: inset 3px 9px 19px #9943df; border-bottom-color: #9713c7; 
+        background-color: #17d9af; color: #0a0a0a;
+      }
 /****************************************************************************************************
-********* Estilização do HEADER */
-      h1 { font-size: 52px; text-shadow:  4px 4px 0 #813c08, 2px 4px 12px #222621, 12px 14px 22px #4b5b46; color:#faf450; padding-top: 72px; }
-      h2{ font-size: 82px; color: #17d9af; text-shadow: 2px 4px 2px #0a0a0a; margin-top: -15px;}
+********* Estilização dos ITENS DO HEADER */
+      .social{ text-align: center; margin-top: -2%;}
+      .social li{ display: inline-block;}
+      .titulo_page{
+        font-family: "Monoton", sans-serif; font-size: 3rem; font-weight: 200;
+        color: #f7ed65; text-shadow: 2px 4px 20px #f6eeaa;
+      }
+      .icones_social img{
+        width: 50px; height: 50px; box-shadow: 10px 10px 0 #9007e6; border: 2px inset #9007e6;
+        margin: 15px; border-radius: 10px; 
+      }
+      .icones_social img:hover{
+        box-shadow: 10px 10px 0 #e8b50c; border: 2px inset #e8b50c;
+        filter: drop-shadow( 6px 15px 20px #faf450c3 );
+      }
 /****************************************************************************************************
-********* Estilização do MAIN */
+********* Estilização dos ITENS DO MAIN */
       .video-background {
         position: relative;
         width: 100%;
-        height: 100vh;
-        overflow-y: scroll;
+        height: 500px;
         overflow-x: hidden;
       }
 
@@ -66,24 +85,16 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
-        height: 100%;
+        height: 465px;
         object-fit: cover; /* Faz o vídeo cobrir toda a div */
       }
-
-      .content {
-        position: relative;
+      .zona-de-herois{
+        display: flex; justify-content: space-evenly; align-items: center; text-align: center;
+        position: relative; margin-top: 5%;
         z-index: 2;
         color: white;
         text-align: center;
-        font-size: 2em;
-      }
-
-      .titulo-especial{ 
-        padding: 20px; font-family: "Press Start 2P", system-ui; font-size: medium; color: #faf450;
-        width: 500px;  margin: auto; line-height: 32px; text-shadow: 2px 2px 0 #00071E;
-      }
-      .zona-de-herois{
-        display: flex; justify-content: center; align-items: center; min-width: 350px;
+        
       }
       .heroi{ display: block; justify-content: center; text-align: center;}
       .heroi img{ 
@@ -92,55 +103,42 @@
       }
       .heroi img:hover{ filter: drop-shadow( 5px 10px 15px #faf450c3 ); }
 
-      .btn{
-        width: 200px; height: 100px; border-bottom-width: 12px; padding: 10px 22px;
-        border-bottom-color: #9943df; background-color: transparent; cursor: pointer;
-        box-shadow: inset 3px 9px 19px #bb0e70; border-radius: 22px;
-        font-family: "Monoton", sans-serif; color: #faf450; font-weight: 300; font-size: 1.5rem;
-      }
-      .btn:hover{
-        box-shadow: inset 3px 9px 19px #9943df; border-bottom-color: #9713c7; 
-        background-color: #17d9af; color: #0a0a0a;
-      }
 
-      /*** Estilização da ESTRUTURA NAS JANELAS MODAIS... */
+
+/****************************************************************************************************
+********* Estilização dos ITENS DAS JANELAS MODAIS */
       .janela-modal{
-            width: 1500px; height: auto;  position: absolute; flex-wrap: wrap;
-            background-color: rgba(0,0,0, 0.5); top: 10px; right: auto; left:auto;
-            display: none; align-items: center; justify-content: center;
-            min-width: 360px; padding-bottom: 10%; z-index: 1;            
+        width: 1500px; height: auto;  position: absolute; flex-wrap: wrap;
+        background-color: rgba(0,0,0, 0.5); top: 10px; right: auto; left:auto;
+        display: none; align-items: center; justify-content: center;
+        min-width: 360px; padding-bottom: 10%; z-index: 1; 
+        overflow-y: scroll; overflow-x: hidden;
       }
       .modal{
-            width: 80%; min-width: 360px; margin: 2% 5%; 
-            background-color: rgba(252, 252, 246, 0.711); flex-wrap: wrap;
-            backdrop-filter: blur(10px); padding: 20px; border-radius: 20px;
-            font-family: "Press Start 2P", system-ui; color: #00071E;
-            
-            
+        width: 80%; min-width: 360px; margin: 2% 5%; position: relative; top: -10px;
+        background-color: rgba(252, 252, 246, 0.711); flex-wrap: wrap;
+        backdrop-filter: blur(10px); padding: 20px; border-radius: 20px;
+        font-family: "Press Start 2P", system-ui; color: #00071E;        
+       
       }
       .fechar_modal{
-            position: absolute; top: -10px; right: -10px; cursor: pointer;
-            width: 30px; height: 30px; border-radius: 50%; border: 0;
-            background-color: red; color: #f7ed65; font-size: 22px;
+        position: absolute; top: -10px; right: -10px; cursor: pointer;
+        width: 30px; height: 30px; border-radius: 50%; border: 0;
+        background-color: red; color: #f7ed65; font-size: 22px;
       }
       .janela-modal.abrir{ display: flex; flex-wrap: wrap; }
 
       @keyframes abrirModal {
-            from{
-                opacity: 0; transform: translate3d( 0,-20px,-5px);
-            }
-            to{
-                opacity: 1; transform: translate3d(0,0,0);
-            }
+        from{
+            opacity: 0; transform: translate3d( 0,-20px,-5px);
+        }
+        to{
+            opacity: 1; transform: translate3d(0,0,0);
+        }
       }
       .abrir .modal{ animation: abrirModal 0.5s}
-      /*** Estilizando o CONTEUDO DENTRO DAS JANELAS MODAIS....  */
-      .conteudo_modal{
-          display: block; justify-content: center; align-items: center; text-align: center;
-      }
-      .nome_heroi{
-        color:#bb0e70; font-size: 1.6rem; text-shadow: 5px 5px 0 #17d9af;
-      }
+
+      /**** Estilização do CONTEUDO DENTRO DAS JANELAS MODAIS...    */
       .zona_armamento{
         display: flex; justify-content: space-evenly; align-items: center; text-align: center;
         font-size: 1.2rem;
@@ -148,15 +146,52 @@
       .arsenal {
         display: flex; justify-content: center; align-items: center; text-align: center;
       }
+      .nome_heroi{
+        color:#bb0e70; font-size: 1.6rem; text-shadow: 5px 5px 0 #17d9af;
+      }
+      .titulo-especial{ 
+        padding: 20px; font-family: "Press Start 2P", system-ui; font-size: medium; color: #faf450;
+        width: 500px;  margin: auto; line-height: 32px; text-shadow: 2px 2px 0 #00071E;
+      }
+      .arsenal {
+        display: flex; justify-content:space-around; align-items: center; text-align: center;
+        flex-wrap: wrap; min-width: 350px; padding: 50px;  
+        
+      }
+      .arma{ margin: 20px;}
       .arsenal img{
-        width: 140px; height: 180px; margin: 3px; object-fit: contain; object-position: center;
+        width: 240px; height: 180px;  object-fit: contain; object-position: center;
         border-radius: 20px; box-shadow: inset 2px 4px 18px #9943df;
       }
       .arsenal img:hover{
         box-shadow: inset 2px 4px 18px #fbc35b;background: linear-gradient(-45deg, #5b4f69, #f7ed65, #17d9af);
       }
+      .fechar-info{
+        position: absolute; top: -10px; right: -10px; cursor: pointer;
+        width: 30px; height: 30px; border-radius: 50%; border: 0;
+        background-color: red; color: #f7ed65; font-size: 22px;
+      }
+      .info-arma {
+        display: none;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        position: relative;
+        width: 240px;
+        font-size: smaller; line-height: 32px;
+        border-radius: 22px;
+        box-shadow: inset 3px 9px 19px #9943df;
+      }
+      
+   
+     
+      
+
 /****************************************************************************************************
-********* Estilização do FOOTER */
-      footer{
-        color: #faf450; font-size: 1.4rem; text-shadow: 2px 2px 0 #0a0a0a;
+********* Estilização dos ITENS DO FOOTER */
+      footer a{ color: #f7f4a7;  }
+      footer h1{
+        font-size: 1.2rem; text-align: center; margin: 20px; padding-top: 10px;
       }
