@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   }
   
-
   exibirArma(div5, armaUm);
   exibirArma(div6, armaDois);
   exibirArma(div7, armaTres);
@@ -134,7 +133,60 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   }
 
-  function escolherArma1(btn, id, idArma){
-    
+  function escolherArma(btn, id, idArma){
+    let armaDiv = btn.closest(".arma");
+    if (!armaDiv) {
+        console.error("Div da arma não encontrada...");
+        return;
+    }
+
+    let armaEscolhidaElem = armaDiv.querySelector("p[id^='arma_escolhida']");
+    if (!armaEscolhidaElem) {
+        console.error("Elemento de arma escolhida não encontrado...");
+        return;
+    }
+
+    armaEscolhidaElem.style.display = "block";
+    armaEscolhidaElem.innerHTML = ""; // Limpa antes de exibir
+
+    let mensagem = "";
+    let imagemSrc = "";
+
+    if( id === heroTres && idArma === armaUm){
+      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Monge Intergalático...";
+      imagemSrc = "Imagem/monge-completo.png";
+    }
+    else if(id === heroDois && idArma === armaDois){
+      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Mago Intergalático...";
+      imagemSrc = "Imagem/mago-completo.png";
+    }
+    else if(id === heroUm && idArma === armaTres){
+      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Guerreiro Intergalático...";
+      imagemSrc = "Imagem/guerreiro-completo.png";
+    }
+    else if( id === heroUm && idArma === armaQuatro){
+      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Guerreiro Intergalático...";
+      imagemSrc = "Imagem/guerreiro-completo.png";
+    }
+    else if( id === heroQuatro && idArma === armaCinco){
+      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Ninja Intergalático...";
+      imagemSrc = "Imagem/ninja-completo.png";
+    }
+    else if( id === heroDois && idArma === armaSeis){
+      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Mago Intergalático...";
+      imagemSrc = "Imagem/mago-completo.png";
+    }
+    else{
+      mensagem ="OPS!... Não foi dessa vez, seu guerreiro não sabe usar esta arma...";
+    }
+
+    armaEscolhidaElem.innerText = mensagem;
+    if (imagemSrc) {
+        const imagem = document.createElement("img");
+        imagem.src = imagemSrc;
+        imagem.alt = "Imagem do herói completo";
+        imagem.width = 400;
+        armaEscolhidaElem.appendChild(imagem);
+    }
   }
   
