@@ -19,10 +19,28 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 });
 
-/**** Montando as Estruturas das JANELAS MODAIS... */
+
+
+/**** Montando a Estrutura  da JANELA MODAL... */
+  let heroiSelecionado = " ";
+
   function abrirModal(id){
     const modal = document.getElementById(id)
       modal.classList.add('abrir');
+
+      // Associa o herói à janela modal correspondente
+    if(id === 'janela-modal1') {
+      heroiSelecionado = heroUm;
+    }
+    else if(id === 'janela-modal2'){
+      heroiSelecionado = heroDois;
+    }
+    else if(id === 'janela-modal3'){
+      heroiSelecionado = heroTres;
+    }
+    else if(id === 'janela-modal4'){
+      heroiSelecionado = heroQuatro;
+    }
   }
 
   function fecharModal(id){
@@ -30,13 +48,13 @@ document.addEventListener("DOMContentLoaded", function(){
     if(modal){
       modal.classList.remove('abrir');
     }
-}
+  } 
 
-
-  /**** Montando as funções de CONTEUDO DAS JANELAS... */
+   /**** Montando as funções de CONTEUDO DAS JANELAS... */
   /*Construindo a estrutura do heroi...    */
   let id = " ";
   let idArma = " ";
+  
   class heroiMagico {
     constructor(id, tipo, nivel, ataque) {
       this.id = id;
@@ -87,11 +105,11 @@ document.addEventListener("DOMContentLoaded", function(){
   }
     
   const armaUm = new armaMagica('Bastão Dourado', 100, 'Força Repelidora');
-  const armaDois = new armaMagica('Cajado Mágico', 800, 'Transmite o desejo para a pedra do poder');
-  const armaTres= new armaMagica('Escudo Solarium', 700, 'Bloqueio Universal de qualquer ataque');
-  const armaQuatro = new armaMagica('Espada Estelar', 900, 'Lâmina Infinita de Orion');
-  const armaCinco = new armaMagica('Katana Fujikan', 400, 'Corte das duas faces');
-  const armaSeis = new armaMagica('Pedra do Poder Absoluto', 1000,'Realizador de desejos');
+  const armaDois = new armaMagica('Escudo e Espada Intergalática Solarium', 700, 'Bloqueio Universal de qualquer ataque e Lâmina Infinita de Orion');
+  const armaTres= new armaMagica('Katana Fujikan', 400, 'Corte das duas faces');
+  const armaQuatro = new armaMagica('Cajado Mágico e Pedra do Poder Absoluto', 800, 'Transmite o desejo para a pedra do poder');
+  
+
 
   const div5 = document.getElementById("armaInfo1");
   const div6 = document.getElementById("armaInfo2");
@@ -99,6 +117,17 @@ document.addEventListener("DOMContentLoaded", function(){
   const div8 = document.getElementById("armaInfo4");
   const div9 = document.getElementById("armaInfo5");
   const div10 = document.getElementById("armaInfo6");
+  const div11 = document.getElementById("armaInfo7"); 
+  const div12 = document.getElementById("armaInfo8");
+  const div13 = document.getElementById("armaInfo9");
+  const div14 = document.getElementById("armaInfo10");
+  const div15 = document.getElementById("armaInfo11");
+  const div16 = document.getElementById("armaInfo12");
+  const div17 = document.getElementById("armaInfo13");
+  const div18 = document.getElementById("armaInfo14");
+  const div19 = document.getElementById("armaInfo15");
+  const div20 = document.getElementById("armaInfo16");
+
 
   function exibirArma(div, arma) {
     if (div){
@@ -116,8 +145,20 @@ document.addEventListener("DOMContentLoaded", function(){
   exibirArma(div6, armaDois);
   exibirArma(div7, armaTres);
   exibirArma(div8, armaQuatro);
-  exibirArma(div9, armaCinco);
-  exibirArma(div10, armaSeis);
+  exibirArma(div9, armaUm);
+  exibirArma(div10, armaDois);
+  exibirArma(div11, armaTres);
+  exibirArma(div12, armaQuatro);
+  exibirArma(div13, armaUm);
+  exibirArma(div14, armaDois);
+  exibirArma(div15, armaTres);
+  exibirArma(div16, armaQuatro);
+  exibirArma(div17, armaUm);
+  exibirArma(div18, armaDois);
+  exibirArma(div19, armaTres);
+  exibirArma(div20, armaQuatro);
+ 
+
 
   function mostrarInfo(id) {
     const infoDiv = document.getElementById(id);
@@ -133,60 +174,59 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   }
 
-  function escolherArma(btn, id, idArma){
-    let armaDiv = btn.closest(".arma");
-    if (!armaDiv) {
-        console.error("Div da arma não encontrada...");
+  function fecharEscolha(id) {
+    let infoDiv = document.getElementById(id);
+    
+    if (!infoDiv) {
+        console.error(`Elemento com ID "${id}" não encontrado.`);
         return;
     }
 
-    let armaEscolhidaElem = armaDiv.querySelector("p[id^='arma_escolhida']");
-    if (!armaEscolhidaElem) {
-        console.error("Elemento de arma escolhida não encontrado...");
-        return;
-    }
+    infoDiv.classList.remove("abrir");
 
-    armaEscolhidaElem.style.display = "block";
-    armaEscolhidaElem.innerHTML = ""; // Limpa antes de exibir
-
-    let mensagem = "";
-    let imagemSrc = "";
-
-    if( id === heroTres && idArma === armaUm){
-      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Monge Intergalático...";
-      imagemSrc = "Imagem/monge-completo.png";
-    }
-    else if(id === heroDois && idArma === armaDois){
-      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Mago Intergalático...";
-      imagemSrc = "Imagem/mago-completo.png";
-    }
-    else if(id === heroUm && idArma === armaTres){
-      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Guerreiro Intergalático...";
-      imagemSrc = "Imagem/guerreiro-completo.png";
-    }
-    else if( id === heroUm && idArma === armaQuatro){
-      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Guerreiro Intergalático...";
-      imagemSrc = "Imagem/guerreiro-completo.png";
-    }
-    else if( id === heroQuatro && idArma === armaCinco){
-      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Ninja Intergalático...";
-      imagemSrc = "Imagem/ninja-completo.png";
-    }
-    else if( id === heroDois && idArma === armaSeis){
-      mensagem = "Parabéns aventureiro!... Seu heroi está completo!... Agora viaje pelas galáxias e salve os mundos com o nosso Mago Intergalático...";
-      imagemSrc = "Imagem/mago-completo.png";
-    }
-    else{
-      mensagem ="OPS!... Não foi dessa vez, seu guerreiro não sabe usar esta arma...";
-    }
-
-    armaEscolhidaElem.innerText = mensagem;
-    if (imagemSrc) {
-        const imagem = document.createElement("img");
-        imagem.src = imagemSrc;
-        imagem.alt = "Imagem do herói completo";
-        imagem.width = 400;
-        armaEscolhidaElem.appendChild(imagem);
+    // Em vez de limpar tudo, só oculta a div
+    let content = infoDiv.querySelector(".arma_escolhida");
+    if (content) {
+        content.innerHTML = "";
     }
   }
+
+  function escolherArma(btn, arma){
+    let armaDiv = btn.closest(".arma");
+    let armaEscolhidaElem = armaDiv.querySelector("div[id^='arma_escolhida']");
+    armaEscolhidaElem.style.display = "block";
   
+    let mensagem = "";
+    let imagemSrc = "";
+  
+    if(heroiSelecionado === heroUm && arma === armaDois){
+      mensagem = "Parabéns aventureiro!... Seu herói está completo!... Guerreiro Intergalático!";
+      imagemSrc = "Imagem/guerreiro-completo.png";
+    } else if(heroiSelecionado === heroDois && arma === armaQuatro){
+      mensagem = "Parabéns aventureiro!... Seu herói está completo!... Mago Intergalático!";
+      imagemSrc = "Imagem/mago-completo.png";
+    } else if(heroiSelecionado === heroTres && arma === armaUm){
+      mensagem = "Parabéns aventureiro!... Seu herói está completo!... Monge Intergalático!";
+      imagemSrc = "Imagem/monge-completo.png";
+    } else if(heroiSelecionado === heroQuatro && arma === armaTres){
+      mensagem = "Parabéns aventureiro!... Seu herói está completo!... Ninja Intergalático!";
+      imagemSrc = "Imagem/ninja-completo.png";
+    } else {
+      mensagem = "OPS!... Não foi dessa vez, seu guerreiro não sabe usar esta arma...";
+    }
+  
+    armaEscolhidaElem.innerText = mensagem;
+    if (imagemSrc) {
+      const imagem = document.createElement("img");
+      imagem.src = imagemSrc;
+      imagem.alt = "Imagem do herói completo";
+      imagem.width = 400;
+      armaEscolhidaElem.appendChild(imagem);
+    }
+  }  
+    window.abrirModal = abrirModal;
+    window.fecharModal = fecharModal;
+    window.mostrarInfo = mostrarInfo;
+    window.fecharInfo = fecharInfo;
+    window.fecharEscolha = fecharEscolha;
+    window.escolherArma = escolherArma;

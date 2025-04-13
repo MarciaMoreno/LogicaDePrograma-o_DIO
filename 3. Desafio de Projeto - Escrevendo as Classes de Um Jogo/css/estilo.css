@@ -5,195 +5,192 @@
 /******************************************************************************************************************
 ***************DESAFIO DE PROJETO - Lógica de Programação - Nazaré do Piauí 18/03 ********************************/
 
-      /*** Fontes do GOOGLE  */
-      .monoton-regular {
-        font-family: "Monoton", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      .press-start-2p-regular {
-        font-family: "Press Start 2P", system-ui;
-        font-weight: 400;
-        font-style: normal;
-      }
-      .texto {
-        font-family: "42dot Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-      }    
+    /*** Fontes do GOOGLE  */
+    .monoton-regular {
+      font-family: "Monoton", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .press-start-2p-regular {
+      font-family: "Press Start 2P", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .texto {
+      font-family: "42dot Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }    
+
+/****************************************************************************************************
+********* Estilização dos ITENS DO BODY 
+/*****************************************************************************************************/
+    a{ text-decoration: none;}
+    ul li{ list-style: none;}
+    body{ background-color: #00071E; margin: auto; max-width: 1900px; }
+    header{
+      display: flex; justify-content: space-between; text-align: center; align-items: center;
+    }
+    /***Botões utilizados na pàgina....*/
+    .btn{
+      border-bottom-color: #9943df; border-bottom-width: 12px; border-radius: 22px; 
+      background-color: transparent; box-shadow: inset 3px 9px 19px #9943df;       
+      font-family: "Monoton", sans-serif; color: #faf450; font-weight: 200; font-size: 1.5rem;
+      padding: 10px 22px ; cursor: pointer;
+    }
+    .btn:hover{
+      box-shadow: inset 3px 9px 19px #9943df; border-bottom-color: #9713c7; 
+      background-color: #17d9af; color: #0a0a0a;
+    }  
 
 
 /****************************************************************************************************
-********* Estilização dos ITENS DO BODY */
-      a{ text-decoration: none;}
-      ul li{ list-style: none;}
-      body{ 
-        background-color: #00071E;
-      }
-      header{
-        display: flex; justify-content: space-evenly; text-align: center; align-items: center;
-      }
-      .btn{
-        width: 200px; height: 100px; border-bottom-width: 12px; padding: 10px 22px;
-        border-bottom-color: #9943df; background-color: transparent; cursor: pointer;
-        box-shadow: inset 3px 9px 19px #9943df; border-radius: 22px; 
-        font-family: "Monoton", sans-serif; color: #faf450; font-weight: 300; font-size: 1.5rem;
-      }
-      .btn:hover{
-        box-shadow: inset 3px 9px 19px #9943df; border-bottom-color: #9713c7; 
-        background-color: #17d9af; color: #0a0a0a;
-      }
-      .btn_arma{
-        padding: 10px 2px; color: #17d9af;
-        border-bottom-color: #342341; background-color: transparent; cursor: pointer;
-        box-shadow: inset 3px 9px 19px #9943df; border-radius: 22px; background-color: #280738;
-        font-family: "Monoton", sans-serif; font-weight: 300; font-size: 1.5rem; letter-spacing: 3px;
-      }
-      .btn_arma:hover{
-        box-shadow: inset 3px 9px 19px #9943df; border-bottom-color: #9713c7; 
-        background-color: #17d9af; color: #0a0a0a;
-      }
-/****************************************************************************************************
-********* Estilização dos ITENS DO HEADER */
-      .social{ text-align: center; margin-top: -2%;}
-      .social li{ display: inline-block;}
-      .titulo_page{
-        font-family: "Monoton", sans-serif; font-size: 3rem; font-weight: 200;
-        color: #f7ed65; text-shadow: 2px 4px 20px #f6eeaa;
-      }
-      .icones_social img{
-        width: 50px; height: 50px; box-shadow: 10px 10px 0 #9007e6; border: 2px inset #9007e6;
-        margin: 15px; border-radius: 10px; 
-      }
-      .icones_social img:hover{
-        box-shadow: 10px 10px 0 #e8b50c; border: 2px inset #e8b50c;
-        filter: drop-shadow( 6px 15px 20px #faf450c3 );
-      }
-/****************************************************************************************************
-********* Estilização dos ITENS DO MAIN */
-      .video-background {
-        position: relative;
-        width: 100%;
-        height: 500px;
-        overflow-x: hidden;
-      }
+********* Estilização dos ITENS DO HEADER 
+/*****************************************************************************************************/
+    .trilha{ width: 30%} .social{ width: 70%;}
 
-      .video-background video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 465px;
-        object-fit: cover; /* Faz o vídeo cobrir toda a div */
-      }
-      .zona-de-herois{
-        display: flex; justify-content: space-evenly; align-items: center; text-align: center;
-        position: relative; margin-top: 5%;
-        z-index: 2;
-        color: white;
-        text-align: center;
-        
-      }
-      .heroi{ display: block; justify-content: center; text-align: center;}
-      .heroi img{ 
-        width: 300px; height: 300px; object-fit: fill; object-position: center;
-        filter: drop-shadow( 5px 10px 15px #bb0e70 ); position: relative;
-      }
-      .heroi img:hover{ filter: drop-shadow( 5px 10px 15px #faf450c3 ); }
+    .titulo_page{
+      font-family: "Monoton", sans-serif; font-size: 3rem; font-weight: 200;
+      color: #f7ed65; text-shadow: 2px 4px 20px #f6eeaa;
+    }
+    .social li{ display: inline-block;}
+    .icones_social img{
+      width: 50px; height: 50px; box-shadow: 10px 10px 0 #9007e6; border: 2px inset #9007e6;
+      margin: 15px; border-radius: 10px; 
+    }
+    .icones_social img:hover{
+      box-shadow: 10px 10px 0 #e8b50c; border: 2px inset #e8b50c;
+      filter: drop-shadow( 6px 15px 20px #faf450c3 );
+    }
 
+/****************************************************************************************************
+********* Estilização dos ITENS DO MAIN 
+/*****************************************************************************************************/
+    .video-background {
+      position: relative; width: 100%;  height: 500px;
+      overflow-x: hidden;
+    }
+    .video-background video {
+      position: absolute; top: 50%;  left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; height: 465px;
+      object-fit: cover; /* Faz o vídeo cobrir toda a div */
+    }
+    .zona-de-herois{
+      display: flex; justify-content: space-evenly; align-items: center; 
+      position: relative; margin-top: 5%; color: white; text-align: center;
+      z-index: 2;      
+    }
+    .heroi{ display: block; justify-content: center; text-align: center;}
+    .heroi img{ 
+      width: 300px; height: 300px; object-fit: fill; object-position: center;
+      filter: drop-shadow( 5px 10px 15px #bb0e70 ); position: relative;
+    }
+    .heroi img:hover{ filter: drop-shadow( 5px 10px 15px #faf450c3 ); }
 
 
 /****************************************************************************************************
-********* Estilização dos ITENS DAS JANELAS MODAIS */
-      .janela-modal{
-        width: 1500px; height: auto;  position: absolute; flex-wrap: wrap;
-        background-color: rgba(0,0,0, 0.5); top: 10px; right: auto; left:auto;
-        display: none; align-items: center; justify-content: center;
-        min-width: 360px; padding-bottom: 10%; z-index: 1; 
-        overflow-y: scroll; overflow-x: hidden;
-      }
-      .modal{
-        width: 80%; min-width: 360px; margin: 2% 5%; position: relative; top: -10px;
-        background-color: rgba(252, 252, 246, 0.711); flex-wrap: wrap;
-        backdrop-filter: blur(10px); padding: 20px; border-radius: 20px;
-        font-family: "Press Start 2P", system-ui; color: #00071E;        
-       
-      }
-      .fechar_modal{
-        position: absolute; top: -10px; right: -10px; cursor: pointer;
-        width: 30px; height: 30px; border-radius: 50%; border: 0;
-        background-color: red; color: #f7ed65; font-size: 22px;
-      }
-      .janela-modal.abrir{ display: flex; flex-wrap: wrap; }
+********* Estilização da estrutura das JANELAS MODAIS 
+/*****************************************************************************************************/
+    .janela-modal {
+      width: 1300px; height: 100vh; margin-left: auto; margin-right: auto;
+      position: absolute; top: 0; left: -50px;
+      background-color: rgba(0,0,0,0.5);
+      display: none; align-items: center; justify-content: center;
+      z-index: 999;     
+    }    
+    .modal{
+      width: 80%; min-width: 360px; position: relative; top: -10px;
+      background-color: rgba(252, 252, 246, 0.711); flex-wrap: wrap;
+      backdrop-filter: blur(10px); padding: 20px; border-radius: 20px;
+      font-family: "Press Start 2P", system-ui; color: #00071E; margin: auto;     
+    }
+    .fechar_modal{
+      position: absolute; top: -10px; right: -10px; cursor: pointer;
+      width: 30px; height: 30px; border-radius: 50%; border: 0;
+      background-color: red; color: #f7ed65; font-size: 22px;
+    }
+    .janela-modal.abrir{ display: flex; flex-wrap: wrap; }
 
-      @keyframes abrirModal {
-        from{
-            opacity: 0; transform: translate3d( 0,-20px,-5px);
-        }
-        to{
-            opacity: 1; transform: translate3d(0,0,0);
-        }
+    @keyframes abrirModal {
+      from{
+          opacity: 0; transform: translate3d( 0,-20px,-5px);
       }
-      .abrir .modal{ animation: abrirModal 0.5s}
+      to{
+          opacity: 1; transform: translate3d(0,0,0);
+      }
+    }
+    .abrir .modal{ animation: abrirModal 0.5s}
 
-      /**** Estilização do CONTEUDO DENTRO DAS JANELAS MODAIS...    */
-      .zona_armamento{
-        display: flex; justify-content: space-evenly; align-items: center; text-align: center;
-        font-size: 1.2rem;
-      }
-      .arsenal {
-        display: flex; justify-content: center; align-items: center; text-align: center;
-      }
-      .nome_heroi{
-        color:#bb0e70; font-size: 1.6rem; text-shadow: 5px 5px 0 #17d9af;
-      }
-      .titulo-especial{ 
-        padding: 20px; font-family: "Press Start 2P", system-ui; font-size: medium; color: #faf450;
-        width: 500px;  margin: auto; line-height: 32px; text-shadow: 2px 2px 0 #00071E;
-      }
-      .arsenal {
-        display: flex; justify-content:space-around; align-items: center; text-align: center;
-        flex-wrap: wrap; min-width: 350px; padding: 50px;  
-        
-      }
-      .arma{ margin: 20px;}
-      .arsenal img{
-        width: 240px; height: 180px;  object-fit: contain; object-position: center;
-        border-radius: 20px; box-shadow: inset 2px 4px 18px #9943df;
-      }
-      .arsenal img:hover{
-        box-shadow: inset 2px 4px 18px #fbc35b;background: linear-gradient(-45deg, #5b4f69, #f7ed65, #17d9af);
-      }
-      .fechar-info{
-        position: absolute; top: -10px; right: -10px; cursor: pointer;
-        width: 30px; height: 30px; border-radius: 50%; border: 0;
-        background-color: red; color: #f7ed65; font-size: 22px;
-      }
-      .info-arma {
-        display: none;
-        background-color: #f9f9f9;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        position: relative;
-        width: 240px;
-        font-size: smaller; line-height: 32px;
-        border-radius: 22px;
-        box-shadow: inset 3px 9px 19px #9943df;
-      }
-      .arma_escolhida{
-        width: 200px; height: auto;
-      }
+
+/****************************************************************************************************
+********* Estilização do CONTEUDO DENTRO DAS JANELAS MODAIS 
+/*****************************************************************************************************/
+    .zona_armamento{
+      display: flex; justify-content: space-evenly; align-items: center; text-align: center;
+      font-size: 1.2rem;
+    }
    
-     
+    .nome_heroi{
+      color:#bb0e70; font-size: 1.6rem; text-shadow: 5px 5px 0 #17d9af;
+    }
+    .titulo-especial{ 
+      padding: 20px; font-family: "Press Start 2P", system-ui; font-size: medium; color: #faf450;
+      width: 500px;  margin: auto; line-height: 32px; text-shadow: 2px 2px 0 #00071E;
+    }
+    .arsenal {
+      display: flex; justify-content:center; align-items: center; text-align: center;
+      flex-wrap: wrap; min-width: 350px; padding: 10px;  
       
+    }
+    .arma{ margin: 5px; display: block; justify-content: center; text-align: center; max-width: 240px;}
+    .arsenal img{
+      width: 220px; height: 180px;  object-fit: contain; object-position: center;
+      border-radius: 20px; box-shadow: inset 2px 4px 18px #9943df;
+    }
+    .arsenal img:hover{
+      box-shadow: inset 2px 4px 18px #fbc35b;background: linear-gradient(-45deg, #5b4f69, #f7ed65, #17d9af);
+    }
+    .fechar-info{
+      position: absolute; top: -10px; right: -10px; cursor: pointer;
+      width: 30px; height: 30px; border-radius: 50%; border: 0;
+      background-color: red; color: #f7ed65; font-size: 22px;
+    }
+    .info-arma {
+      display: none;
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      position: relative; 
+      width: 240px; 
+      font-size: smaller; line-height: 32px;
+      border-radius: 22px;
+      box-shadow: inset 3px 9px 19px #9943df;
+    }
+    .arma_escolhida{
+      width: 200px; height: auto; line-height: 22px; padding: 5px;
+      display: none;
+      background-color: #f9f9f9;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      position: relative;
+      width: 240px;
+      font-size: smaller; line-height: 32px;
+      border-radius: 22px;
+      box-shadow: inset 3px 9px 19px #9943df;
+    }
+
+    
 
 /****************************************************************************************************
-********* Estilização dos ITENS DO FOOTER */
-      footer a{ color: #f7f4a7;  }
-      footer h1{
-        font-size: 1.2rem; text-align: center; margin: 20px; padding-top: 10px;
-      }
+********* Estilização dos ITENS DO FOOTER 
+/*****************************************************************************************************/
+    footer a{ color: #f7f4a7;  }
+    footer h1{
+      font-size: 1.2rem; text-align: center; margin: 20px; padding-top: 10px;
+    }

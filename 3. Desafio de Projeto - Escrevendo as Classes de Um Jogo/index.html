@@ -1,186 +1,298 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escrevendo as classes de um Jogo</title>
-    <link rel="stylesheet" href="css/estilo.css">
-    <script src="index.js" defer></script>
-</head>
-<body>
-    <header>
-        <div class="trilha">
-            <button class="btn" id="botao">Trilha Musical</button>
-            <audio id="trilha" loop>
-                <source src="./sound/WaveOnTheFloo.mp3" type="audio/mp3">
-                    Seu navegador não suporta audio...
-            </audio>
-        </div>
-        <div class="social">
-            <h2 class="titulo_page">Weapons's Galacticus</h2>
-            <ul class="icones_social">
-                <li><a href="https://www.facebook.com/profile.php?id=61559592734029"><img  src="./icons/Imagem_20240524_2323.png" alt="Meu facebook profissional"></a></li>
-                <li><a href="http://www.linkedin.com/in/marcia-patricia-moreno-68b4b230a"><img  src="./icons/Imagem_20240524_2327.png" alt="Meu Linkedin"></a></li>
-                <li><a href="https://www.youtube.com/channel/UCIl3wm3BjyE4AzxmL5hGm0Q"><img  src="./icons/Imagem_20240524_2333.png" alt="Meu canal do Youtube"></a></li>
-                <li><a href="./icons/Imagem_20240525_1326-Whatsapp.png"><img  src="./icons/Imagem_20240524_2336.png" alt="Meu Zup"></a></li>
-            </ul>
-        </div>
-    </header>
-    <main>
-        <div class="video-background">
-            <video autoplay muted loop>
-                <source src="./video/back_star.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
-            </video>
-            <div class="zona-de-herois">
-                <!--HEROI UM-->
-                <div class="heroi">
-                    <img src="./Imagem/guerreiro-completo.png" alt="Imagem do GUERREIRO completo">
-                    <button class="btn" onclick="abrirModal('janela-modal1')">PLAY</button>
-                </div>
-                <div class="janela-modal" id="janela-modal1">
-                    <div class="modal">
-                        <button class="fechar_modal" onclick="fecharModal('janela-modal1')">X</button>
-                        <div class="conteudo_modal">
-                            <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
-                            <div class="zona_armamento">
-                                <img width="200" src="./Imagem/avatar/guerreiro.png" alt="Molde do Guerreiro Intergalático">
-                                <div id="heroiInfo1"></div>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escrevendo as classes de um Jogo</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="index.js" defer></script>
+    <body>
+        <header>
+            <div class="trilha">
+                <button class="btn" id="botao">Trilha Musical</button>
+                <audio id="trilha" loop>
+                    <source src="./sound/WaveOnTheFloor.mp3" type="audio/mp3">
+                        Seu navegador não suporta audio...
+                </audio>
+            </div>
+            <div class="social">
+                <h2 class="titulo_page">Weapons's Galacticus</h2>
+                <ul class="icones_social">
+                    <li><a href="https://www.facebook.com/profile.php?id=61559592734029"><img  src="./icons/Imagem_20240524_2323.png" alt="Meu facebook profissional"></a></li>
+                    <li><a href="http://www.linkedin.com/in/marcia-patricia-moreno-68b4b230a"><img  src="./icons/Imagem_20240524_2327.png" alt="Meu Linkedin"></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCIl3wm3BjyE4AzxmL5hGm0Q"><img  src="./icons/Imagem_20240524_2333.png" alt="Meu canal do Youtube"></a></li>
+                    <li><a href="./icons/Imagem_20240525_1326-Whatsapp.png"><img  src="./icons/Imagem_20240524_2336.png" alt="Meu Zup"></a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="video-background">
+                <video autoplay muted loop>
+                    <source src="./video/back_star.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <div class="zona-de-herois">
+                    <!--HEROI UM................................................................................................................-->
+                    <div class="heroi">
+                        <img src="./Imagem/guerreiro-completo.png" alt="Imagem do GUERREIRO completo">
+                        <button class="btn" onclick="abrirModal('janela-modal1')">PLAY</button>
+                    </div>
+                    <div class="janela-modal" id="janela-modal1">
+                        <div class="modal">
+                            <button class="fechar_modal" id="fechar_modal1" onclick="fecharModal('janela-modal1')">X</button>
+                            <div class="conteudo_modal">
+                                <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
+                                <div class="zona_armamento">
+                                    <img width="200" src="./Imagem/avatar/guerreiro.png" alt="Molde do Guerreiro Intergalático">
+                                    <div id="heroiInfo1"></div>
+                                </div>
+                                <p class="titulo-especial">Quais as duas armas que mais combina com nosso herói?... </p>
+                                <div class="arsenal">
+                                    <!--ARMA 01-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo1')" src="./Imagem/armas/bastao.png" alt="Bastão intergalático">
+                                        <div class="info-arma" id="armaInfo1">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo1')">X</button>                                        
+                                        </div> 
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaUm)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida1">
+                                            <button class="fechar_escolha" id="fechar_escolha1" onclick="fecharEscolha('arma_escolhida1')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 02-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo2')" src="./Imagem/armas/escudo.png" alt="Escudo e espada Solarium Intergalático">
+                                        <div class="info-arma" id="armaInfo2">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo2')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaDois)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida2">
+                                            <button class="fechar_escolha" id="fechar_escolha2" onclick="fecharEscolha('arma_escolhida2')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 03-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo3')" src="./Imagem/armas/katana.png" alt="Katana intergalática">
+                                        <div class="info-arma" id="armaInfo3">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo3')">X</button>
+                                        </div>  
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaTres)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida3">
+                                            <button class="fechar_escolha" id="fechar_escolha3" onclick="fecharEscolha('arma_escolhida3')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 04-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo4')" src="./Imagem/armas/cajado.png" alt="cajado e pedra do poder intergalática">
+                                        <div class="info-arma" id="armaInfo4">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo4')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaQuatro)">Escolher</button> 
+                                        <div class="arma_escolhida" id="arma_escolhida4">
+                                            <button class="fechar_escolha" id="fechar_escolha4" onclick="fecharEscolha('arma_escolhida4')"></button>
+                                        </div>    
+                                    </div> 
+                                </div>
                             </div>
-                            <p class="titulo-especial">Quais as duas armas que mais combina com nosso herói?... </p>
-                            <div class="arsenal">
-                                <!--ARMA 01-->
-                                <div class="arma">
-                                    <img onclick="mostrarInfo('armaInfo1')" src="./Imagem/armas/bastao.png" alt="Bastão intergalático">
-                                    <div class="info-arma" id="armaInfo1">
-                                        <button class="fechar-info" onclick="fecharInfo('armaInfo1')">X</button>                                        
-                                    </div> 
-                                    <div class="btn_arma" id="arma_esc1" onclick="escolherArma(this,heroTres,armaUm)">Escolher
-                                        <button class="fechar-info" onclick="fecharEscolha('arma_escolhida1')">X</button>
+                        </div>
+                    </div>
+                    <!--HEROI DOIS..............................................................................................................-->
+                    <div class="heroi">
+                        <img src="./Imagem/mago-completo.png" alt="Imagem do MAGO completo">
+                        <button class="btn" onclick="abrirModal('janela-modal2')">PLAY</button>
+                    </div>
+                    <div class="janela-modal" id="janela-modal2">
+                        <div class="modal">
+                            <button class="fechar_modal" id="fechar_modal2" onclick="fecharModal('janela-modal2')">X</button>
+                            <div class="conteudo_modal">
+                                <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
+                                <div class="zona_armamento">
+                                    <img width="200" src="./Imagem/avatar/mago.png" alt="Molde do Mago Intergalático">
+                                    <div id="heroiInfo2"></div>
+                                </div>
+                                <p class="titulo-especial">Quais as duas armas que mais combina com nosso herói?... </p>
+                                <div class="arsenal">
+                                    <!--ARMA 01-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo5')" src="./Imagem/armas/bastao.png" alt="Bastão intergalático">
+                                        <div class="info-arma" id="armaInfo5">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo5')">X</button>                                        
+                                        </div> 
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaUm)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida5">
+                                            <button class="fechar_escolha" id="fechar_escolha5" onclick="fecharEscolha('arma_escolhida5')"></button>
+                                        </div>
                                     </div>
-                                    <p id="arma_escolhida1" class="arma_escolhida"></p>                          
-                                </div>                                    
-                                <!--ARMA 02-->
-                                <div class="arma">
-                                    <img onclick="mostrarInfo('armaInfo2')" src="./Imagem/armas/cajado.png" alt="Cajado Mágicoo intergalático">
-                                    <div class="info-arma" id="armaInfo2">
-                                        <button class="fechar-info" onclick="fecharInfo('armaInfo2')">X</button>
-                                    </div> 
-                                    <div class="btn_arma" id="arma_esc2" onclick="escolherArma(this,heroDois,armaDois)">Escolher
-                                        <button class="fechar-info" onclick="fecharEscolha('arma_escolhida2')">X</button>
-                                    </div> 
-                                    <p id="arma_escolhida2" class="arma_escolhida"></p>                                    
-                                </div>                               
-                                <!--ARMA 03-->
-                                <div class="arma">
-                                    <img onclick="mostrarInfo('armaInfo3')" src="./Imagem/armas/escudo.png" alt="Escudo intergalático">
-                                    <div class="info-arma" id="armaInfo3">
-                                        <button class="fechar-info" onclick="fecharInfo('armaInfo3')">X</button>
-                                    </div> 
-                                    <div class="btn_arma" id="arma_esc3" onclick="escolherArma(this,heroUm,armaTres)">Escolher
-                                        <button class="fechar-info" onclick="fecharEscolha('arma_escolhida3')">X</button>
-                                    </div> 
-                                    <p id="arma_escolhida3" class="arma_escolhida></p>           
-                                </div>                                
-                                <!--ARMA 04-->
-                                <div class="arma">
-                                    <img onclick="mostrarInfo('armaInfo4')" src="./Imagem/armas/espada-guerreiro.png" alt="Espada Estelar intergalática">
-                                    <div class="info-arma" id="armaInfo4">
-                                        <button class="fechar-info" onclick="fecharInfo('armaInfo4')">X</button>
+                                    <!--ARMA 02-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo6')" src="./Imagem/armas/escudo.png" alt="Escudo e espada Solarium Intergalático">
+                                        <div class="info-arma" id="armaInfo6">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo6')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaDois)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida6">
+                                            <button class="fechar_escolha" id="fechar_escolha6" onclick="fecharEscolha('arma_escolhida6')"></button>
+                                        </div>
                                     </div>
-                                    <div class="btn_arma" id="arma_esc4" onclick="escolherArma(this,heroUm,armaQuatro)">Escolher
-                                        <button class="fechar-info" onclick="fecharEscolha('arma_escolhida4')">X</button>
+                                    <!--ARMA 03-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo7')" src="./Imagem/armas/katana.png" alt="Katana intergalática">
+                                        <div class="info-arma" id="armaInfo7">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo7')">X</button>
+                                        </div>  
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaTres)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida7">
+                                            <button class="fechar_escolha" id="fechar_escolha7" onclick="fecharEscolha('arma_escolhida7')"></button>
+                                        </div>
                                     </div>
-                                    <p id="arma_escolhida4" class="arma_escolhida></p>                                  
-                                </div>                                
-                                <!--ARMA 05-->
-                                <div class="arma">
-                                    <img onclick="mostrarInfo('armaInfo5')" src="./Imagem/armas/katana.png" alt="Katana Fujikan intergalática">
-                                    <div class="info-arma" id="armaInfo5">
-                                        <button class="fechar-info" onclick="fecharInfo('armaInfo5')">X</button>
-                                    </div>  
-                                    <div class="btn_arma" id="arma_esc5" onclick="escolherArma(this,heroQuatro,armaCinco)">Escolher
-                                        <button class="fechar-info" onclick="fecharEscolha('arma_escolhida5')">X</button>
-                                    </div>   
-                                    <p id="arma_escolhida5" class="arma_escolhida></p>                              
-                                </div>                             
-                                <!--ARMA 06-->
-                                <div class="arma">
-                                    <img onclick="mostrarInfo('armaInfo6')" src="./Imagem/armas/pedra-poder.png" alt="Pedra do Poder Absoluto intergalático">
-                                    <div class="info-arma" id="armaInfo6">
-                                        <button class="fechar-info" onclick="fecharInfo('armaInfo6')">X</button>
-                                    </div>   
-                                    <div class="btn_arma" id="arma_esc6" onclick="escolherArma(this,heroDois,armaSeis)">Escolher
-                                        <button class="fechar-info" onclick="fecharEscolha('arma_escolhida6')">X</button>
+                                    <!--ARMA 04-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo8')" src="./Imagem/armas/cajado.png" alt="cajado e pedra do poder intergalática">
+                                        <div class="info-arma" id="armaInfo8">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo8')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaQuatro)">Escolher</button> 
+                                        <div class="arma_escolhida" id="arma_escolhida8">
+                                            <button class="fechar_escolha" id="fechar_escolha8" onclick="fecharEscolha('arma_escolhida8')"></button>
+                                        </div>    
                                     </div> 
-                                    <p id="arma_escolhida6" class="arma_escolhida"></p>                                     
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--HEROI TRÊS...............................................................................................................-->
+                    <div class="heroi">
+                        <img src="./Imagem/monge-completo.png" alt="Imagem do MONGE completo">
+                        <button class="btn" onclick="abrirModal('janela-modal3')">PLAY</button>
+                    </div>
+                    <div class="janela-modal" id="janela-modal3">
+                        <div class="modal">
+                            <button class="fechar_modal" id="fechar_modal3" onclick="fecharModal('janela-modal3')">X</button>
+                            <div class="conteudo_modal">
+                                <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
+                                <div class="zona_armamento">
+                                    <img width="200" src="./Imagem/avatar/monge.png" alt="Molde do Monge Intergalático">
+                                    <div id="heroiInfo3"></div>
+                                </div>
+                                <p class="titulo-especial">Qual a arma que mais combina com nosso herói?... </p>
+                                <div class="arsenal">
+                                    <!--ARMA 01-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo9')" src="./Imagem/armas/bastao.png" alt="Bastão intergalático">
+                                        <div class="info-arma" id="armaInfo9">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo9')">X</button>                                        
+                                        </div> 
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaUm)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida9">
+                                            <button class="fechar_escolha" id="fechar_escolha9" onclick="fecharEscolha('arma_escolhida9')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 02-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo10')" src="./Imagem/armas/escudo.png" alt="Escudo e espada Solarium Intergalático">
+                                        <div class="info-arma" id="armaInfo10">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo10')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaDois)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida10">
+                                            <button class="fechar_escolha" id="fechar_escolha10" onclick="fecharEscolha('arma_escolhida10')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 03-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo11')" src="./Imagem/armas/katana.png" alt="Katana intergalática">
+                                        <div class="info-arma" id="armaInfo11">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo11')">X</button>
+                                        </div>  
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaTres)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida11">
+                                            <button class="fechar_escolha" id="fechar_escolha11" onclick="fecharEscolha('arma_escolhida11')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 04-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo12')" src="./Imagem/armas/cajado.png" alt="cajado e pedra do poder intergalática">
+                                        <div class="info-arma" id="armaInfo12">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo12')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaQuatro)">Escolher</button> 
+                                        <div class="arma_escolhida" id="arma_escolhida12">
+                                            <button class="fechar_escolha" id="fechar_escolha12" onclick="fecharEscolha('arma_escolhida12')"></button>
+                                        </div>    
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--HEROI QAUTRO.............................................................................................................-->
+                    <div class="heroi">
+                        <img src="./Imagem/ninja-completo.png" alt="Imagem do NINJA completo">
+                        <button class="btn" onclick="abrirModal('janela-modal4')">PLAY</button>
+                    </div>
+                    <div class="janela-modal" id="janela-modal4">
+                        <div class="modal">
+                            <button class="fechar_modal" id="fechar_modal4" onclick="fecharModal('janela-modal4')">X</button>
+                            <div class="conteudo_modal">
+                                <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
+                                <div class="zona_armamento">
+                                    <img width="200" src="./Imagem/avatar/ninja.png" alt="Molde do Ninja Intergalático">
+                                    <div id="heroiInfo4"></div>
+                                </div>
+                                <p class="titulo-especial">Quais as duas armas que mais combina com nosso herói?... </p>
+                                <div class="arsenal">
+                                    <!--ARMA 01-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo13')" src="./Imagem/armas/bastao.png" alt="Bastão intergalático">
+                                        <div class="info-arma" id="armaInfo13">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo13')">X</button>                                        
+                                        </div> 
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaUm)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida13">
+                                            <button class="fechar_escolha" id="fechar_escolha13" onclick="fecharEscolha('arma_escolhida13')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 02-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo14')" src="./Imagem/armas/escudo.png" alt="Escudo e espada Solarium Intergalático">
+                                        <div class="info-arma" id="armaInfo14">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo14')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaDois)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida14">
+                                            <button class="fechar_escolha" id="fechar_escolha14" onclick="fecharEscolha('arma_escolhida14')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 03-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo15')" src="./Imagem/armas/katana.png" alt="Katana intergalática">
+                                        <div class="info-arma" id="armaInfo15">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo15')">X</button>
+                                        </div>  
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaTres)">Escolher</button>
+                                        <div class="arma_escolhida" id="arma_escolhida15">
+                                            <button class="fechar_escolha" id="fechar_escolha15" onclick="fecharEscolha('arma_escolhida15')"></button>
+                                        </div>
+                                    </div>
+                                    <!--ARMA 04-->
+                                    <div class="arma">
+                                        <img onclick="mostrarInfo('armaInfo16')" src="./Imagem/armas/cajado.png" alt="cajado e pedra do poder intergalática">
+                                        <div class="info-arma" id="armaInfo16">
+                                            <button class="fechar-info" onclick="fecharInfo('armaInfo16')">X</button>
+                                        </div>
+                                        <button width="240px" class="btn" onclick="escolherArma(this, armaQuatro)">Escolher</button> 
+                                        <div class="arma_escolhida" id="arma_escolhida16">
+                                            <button class="fechar_escolha" id="fechar_escolha16" onclick="fecharEscolha('arma_escolhida16')"></button>
+                                        </div>    
+                                    </div> 
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--HEROI DOIS-->
-                <div class="heroi">
-                    <img src="./Imagem/mago-completo.png" alt="Imagem do MAGO completo">
-                    <button class="btn" onclick="abrirModal('janela-modal2')">PLAY</button>
-                </div>
-                <div class="janela-modal" id="janela-modal2">
-                    <div class="modal">
-                        <button class="fechar_modal" onclick="fecharModal('janela-modal2')">X</button>
-                        <div class="conteudo_modal">
-                            <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
-                            <div class="zona_armamento">
-                                <img width="200" src="./Imagem/avatar/mago.png" alt="Molde do Mago Intergalático">
-                                <div id="heroiInfo2"></div>
-                            </div>
-                            <p class="titulo-especial">Escolha a arma que mais combina com nosso herói... </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!--HEROI TRES-->
-                <div class="heroi">
-                    <img src="./Imagem/monge-completo.png" alt="Imagem do MONGE completo">
-                    <button class="btn" onclick="abrirModal('janela-modal3')">PLAY</button>
-                </div>
-                <div class="janela-modal" id="janela-modal3">
-                    <div class="modal">
-                        <button class="fechar_modal" onclick="fecharModal('janela-modal3')">X</button>
-                        <div class="conteudo_modal">
-                            <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
-                            <div class="zona_armamento">
-                                <img width="200" src="./Imagem/avatar/monge.png" alt="Molde do Monge Intergalático">
-                                <div id="heroiInfo3"></div>
-                            </div>
-                            <p class="titulo-especial">Escolha a arma que mais combina com nosso herói... </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!--HEROI QUATRO-->
-                <div class="heroi">
-                    <img src="./Imagem/ninja-completo.png" alt="Imagem do NINJA completo">
-                    <button class="btn" onclick="abrirModal('janela-modal4')">PLAY</button>
-                </div>
-                <div class="janela-modal" id="janela-modal4">
-                    <div class="modal">
-                        <button class="fechar_modal" onclick="fecharModal('janela-modal4')">X</button>
-                        <div class="conteudo_modal">
-                            <p class="titulo-especial">Ajude nosso HERÓI conquistar sua arma de super-força... </p>
-                            <div class="zona_armamento">
-                                <img width="200" src="./Imagem/avatar/ninja.png" alt="Molde do Ninja Intergalático">
-                                <div id="heroiInfo4"></div>
-                            </div>
-                            <p class="titulo-especial">Escolha a arma que mais combina com nosso herói... </p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>            
-        </div>
-    </main>
-    <footer class="texto">
-        <h1><a href="https://dev-marciapatricia.w3spaces.com/">Marcia Moreno  &copy; - 2025 - Nazaré do Piauí</a></h1>
-    </footer>
-</body>
+            </div>
+        </main>
+        <footer>
+            <h1><a href="https://dev-marciapatricia.w3spaces.com/">Marcia Moreno  &copy; - 2025 - Nazaré do Piauí</a></h1>
+        </footer>
+    </body>
 </html>
