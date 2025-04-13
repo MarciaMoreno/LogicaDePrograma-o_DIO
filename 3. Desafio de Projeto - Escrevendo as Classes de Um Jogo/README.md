@@ -45,19 +45,23 @@ Além disso, deve ter um método que deve atender os seguientes requisitos:
 ## **_Saída do script finalizado_**... 
 <br>
 
-> Pagina Index.html, 
-<div align="center"><img src="./prints/home-dos-herois.jpeg" alt="Print da pagina home"></div>
+>Na página index.html estão contidos os atalhos para a rede social do autor. Em seguida no cabeçalho da página é possivel ativar uma trilha musical para acompanhar as atividades durante a execução das atividades na página...
+<div align="center"><img src="./prints/home_index.jpeg" alt="Print da pagina home"></div>
 <br><br>
 
->Momento em que o herói é escolhido... Contudo o usuário precisa ter recolhido a recompensa por participar do toreneio, o mesmo resultado sera equivalente as vitorias conquistados pelo avatar escolhido...
-<div align="center"><img src="./prints/escolhendo-heroi.png" alt="Momento em que o herói é escolhido"></div>
+
+>Em seguida o usuario deve escolher o herói e clicar no botão PLAY... 
+<div align="center"><img src="./prints/tela_escolha-heroi.png" alt="Momento em que o herói é escolhido"></div>
 <br><br>
 
->Em seguida o usuario deve escolher o ponente e clicar no botão de disputa... Caso se queira verificar quantas vitorias o oponente detem, basta clicar na imagem do monstrinho respectivo...
 
-<div align="center"><img src="./prints/escolha-dos-oponentes.jpeg" alt="Imagem dos oponentes disponiveis para combater com os herois"></div>
+
+>Na próxima tela que se abre é possivel ver os dados como  nome, nivel e tipo de ataque do herói, e rolando o scroll as possiveis armas que faltam para completá-lo... Esta é a missão central da atividade... Verificar quais as armas compativeis conforme o tipo escolhido. 
+<div align="center"><img src="./prints/info-heroi.jpeg" alt="Imagem das informações do herpoi escolhido no botão play"></div>
+
+<div align="center"><img src="./prints/escolhendo_arma_heroi.png" alt="Imagem dos oponentes disponiveis para combater com os herois"></div>
 <br><br>
 
->Então... Finlizando... De acordo com o numero de vitorias arrecadado no momento do sorteio, esse mesmo é disputado com o nivel e numero de viorias do oponente... Ganhando quem tem mais experiencia de batalha de um para com o outro... No tete-à-tete... 
+>Então... Finalizando... Temos uma mensagem de confirmação esclarecendo se o nosso herói esta completado e sua imagem confirma isso... 
+<div align="center"><img src="./prints/heroi_completo.jpeg" alt="Final de tela"></div>
 
-<div align="center"><img src="./prints/disputa_de-vitorias.jpeg" alt="Final de tela"></div>
